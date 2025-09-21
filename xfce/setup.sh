@@ -27,3 +27,7 @@ if ! command -v stow >/dev/null 2>&1; then
     sudo pacman -S --needed --noconfirm stow
 fi
 
+echo "==> Creating symlinks with stow..."
+cd "$HOME/.dotfiles"
+stow --target="$HOME" dots-xfce
+
