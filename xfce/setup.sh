@@ -31,3 +31,11 @@ echo "==> Creating symlinks with stow..."
 cd "$HOME/.dotfiles"
 stow --target="$HOME" dots-xfce
 
+# aktifkan lightdm jika ada
+if pacman -Q lightdm &>/dev/null; then
+    echo "==> Enabling LightDM..."
+    sudo systemctl enable lightdm.service
+else
+    echo "LightDM not installed, skipping enable step."
+fi
+
