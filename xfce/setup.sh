@@ -39,3 +39,7 @@ else
     echo "LightDM not installed, skipping enable step."
 fi
 
+# set wallpaper
+$HOME/.config/xfce4/xfce4-set-wallpaper $HOME/.wallpaper/anime_skull.png
+
+echo "==> Done!"
