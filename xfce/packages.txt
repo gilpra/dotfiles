@@ -27,3 +27,4 @@ xdg-desktop-portal-gtk
 xdg-user-dirs
 mpv
 yt-dlp
+fish
