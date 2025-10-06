@@ -28,3 +28,4 @@ xdg-user-dirs
 mpv
 yt-dlp
 fish
+fastfetch
