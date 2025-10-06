@@ -1,3 +1,10 @@
+# Menampilkan Fastfetch jika terminal adalah alacritty
+function fish_greeting
+    if test "$TERM" = alacritty
+        fastfetch -c ~/.config/fastfetch/presets/simple.jsonc
+    end
+end
+
 ###########
 ## ALIAS ##
 ###########
