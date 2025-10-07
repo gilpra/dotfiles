@@ -30,3 +30,4 @@ yt-dlp
 fish
 fastfetch
 alacritty
+starship
