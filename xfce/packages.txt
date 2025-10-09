@@ -31,3 +31,4 @@ fish
 fastfetch
 alacritty
 starship
+stow
