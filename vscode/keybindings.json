@@ -1,0 +1,29 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "alt+x",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "alt+e",
+    "command": "editor.emmet.action.wrapWithAbbreviation"
+  },
+  {
+    "key": "alt+i",
+    "command": "editor.emmet.action.balanceIn"
+  },
+  {
+    "key": "alt+u",
+    "command": "editor.emmet.action.updateTag"
+  },
+  {
+    "key": "shift+alt+up",
+    "command": "editor.action.copyLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+alt+down",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  }
+]
