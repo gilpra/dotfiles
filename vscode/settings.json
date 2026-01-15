@@ -1,0 +1,21 @@
+{
+  "window.commandCenter": false,
+  "editor.fontFamily": "'0xProto Nerd Font', monospace",
+  "editor.fontSize": 14,
+  "editor.fontLigatures": true,
+  "editor.lineHeight": 2.2,
+  "editor.formatOnSave": true,
+  "editor.cursorBlinking": "expand",
+  "window.title": " ",
+  "editor.renderWhitespace": "all",
+  "editor.stickyScroll.enabled": false,
+  // MenuBar Toogle [alt]
+  "window.menuBarVisibility": "toggle",
+  "window.customTitleBarVisibility": "auto",
+  "editor.wordWrap": "on",
+  "zenMode.centerLayout": false,
+  "breadcrumbs.enabled": false,
+  "editor.fontWeight": 600,
+  "editor.linkedEditing": true,
+  "editor.tabSize": 2
+}
