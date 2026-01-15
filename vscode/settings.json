@@ -17,5 +17,14 @@
   "breadcrumbs.enabled": false,
   "editor.fontWeight": 600,
   "editor.linkedEditing": true,
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.minimap.maxColumn": 90,
+  "editor.scrollbar.ignoreHorizontalScrollbarInContentHeight": true,
+  "editor.scrollbar.verticalScrollbarSize": 0,
+  "editor.lineNumbers": "relative",
+  "terminal.integrated.fontSize": 13,
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "none"
 }
