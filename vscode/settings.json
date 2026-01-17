@@ -4,40 +4,66 @@
   "window.title": " ",
   "window.menuBarVisibility": "toggle",
   "window.customTitleBarVisibility": "auto",
+  "workbench.layoutControl.enabled": false,
+
   // Workbench
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
+  "workbench.statusBar.visible": false,
 
   // Theme & Icons
-  "workbench.colorTheme": "Tokyo Night Dark",
+  "workbench.colorTheme": "Paletto — Tokyo Night Dark",
   "workbench.productIconTheme": "material-product-icons",
   "workbench.iconTheme": "material-icon-theme",
 
   // Editor - Appearance
   "editor.fontFamily": "'0xProto Nerd Font', monospace",
-  "editor.fontSize": 14,
+  "editor.fontSize": 13,
   "editor.fontWeight": 600,
   "editor.fontLigatures": true,
-  "editor.lineHeight": 2.2,
+  "editor.lineHeight": 1.6,
   "editor.lineNumbers": "relative",
-  "editor.renderWhitespace": "all",
   "editor.wordWrap": "on",
-  "editor.minimap.maxColumn": 90,
+  "editor.renderLineHighlight": "gutter",
 
   // Editor - Behavior
   "editor.formatOnSave": true,
   "editor.cursorBlinking": "expand",
+  "editor.cursorSmoothCaretAnimation": "on",
   "editor.stickyScroll.enabled": false,
   "editor.linkedEditing": true,
   "editor.tabSize": 2,
+  "editor.codeLens": false,
 
   // Editor - Scrollbar
   "editor.scrollbar.vertical": "hidden",
   "editor.scrollbar.verticalScrollbarSize": 0,
   "editor.scrollbar.ignoreHorizontalScrollbarInContentHeight": true,
+  "editor.minimap.maxColumn": 90,
+
+  // Editor — Bracket & Guides
+  "editor.guides.bracketPairs": true,
+  "editor.bracketPairColorization.enabled": true,
+
+  // Editor — Suggestions & Intellisense
+  "editor.inlineSuggest.enabled": true,
+  "editor.suggestSelection": "first",
+  "editor.acceptSuggestionOnEnter": "smart",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": false,
+  },
+  "editor.gotoLocation.multipleDefinitions": "peek",
+  "editor.gotoLocation.multipleReferences": "peek",
 
   // Editor - Navigation
   "breadcrumbs.enabled": false,
+
+  // EDITOR TABS
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.value": 5,
 
   // Terminal
   "terminal.integrated.fontSize": 13,
@@ -48,6 +74,13 @@
   // Security
   "security.workspace.trust.untrustedFiles": "open",
 
+  // EXPLORER
+  "explorer.confirmDelete": false,
+  "workbench.activityBar.compact": true,
+  "terminal.integrated.initialHint": false,
+
   // Formatter
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
 }
