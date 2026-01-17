@@ -1,3 +1,4 @@
 garpra.paletto
 pkief.material-icon-theme
 pkief.material-product-icons
+esbenp.prettier-vscode

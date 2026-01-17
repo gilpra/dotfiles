@@ -30,5 +30,7 @@
   // Theme
   "workbench.colorTheme": "Tokyo Night Dark",
   "workbench.productIconTheme": "material-product-icons",
-  "workbench.iconTheme": "material-icon-theme"
+  "workbench.iconTheme": "material-icon-theme",
+  // Formatter
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
