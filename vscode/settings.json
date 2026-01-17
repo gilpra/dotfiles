@@ -26,5 +26,9 @@
   "editor.lineNumbers": "relative",
   "terminal.integrated.fontSize": 13,
   "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  // Theme
+  "workbench.colorTheme": "Tokyo Night Dark",
+  "workbench.productIconTheme": "material-product-icons",
+  "workbench.iconTheme": "material-icon-theme"
 }
