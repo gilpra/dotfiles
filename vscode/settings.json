@@ -1,36 +1,53 @@
 {
+  // Window
   "window.commandCenter": false,
-  "editor.fontFamily": "'0xProto Nerd Font', monospace",
-  "editor.fontSize": 14,
-  "editor.fontLigatures": true,
-  "editor.lineHeight": 2.2,
-  "editor.formatOnSave": true,
-  "editor.cursorBlinking": "expand",
   "window.title": " ",
-  "editor.renderWhitespace": "all",
-  "editor.stickyScroll.enabled": false,
-  // MenuBar Toogle [alt]
   "window.menuBarVisibility": "toggle",
   "window.customTitleBarVisibility": "auto",
-  "editor.wordWrap": "on",
-  "zenMode.centerLayout": false,
-  "breadcrumbs.enabled": false,
-  "editor.fontWeight": 600,
-  "editor.linkedEditing": true,
-  "editor.tabSize": 2,
-  "security.workspace.trust.untrustedFiles": "open",
-  "editor.scrollbar.vertical": "hidden",
-  "editor.minimap.maxColumn": 90,
-  "editor.scrollbar.ignoreHorizontalScrollbarInContentHeight": true,
-  "editor.scrollbar.verticalScrollbarSize": 0,
-  "editor.lineNumbers": "relative",
-  "terminal.integrated.fontSize": 13,
+  // Workbench
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
-  // Theme
+
+  // Theme & Icons
   "workbench.colorTheme": "Tokyo Night Dark",
   "workbench.productIconTheme": "material-product-icons",
   "workbench.iconTheme": "material-icon-theme",
+
+  // Editor - Appearance
+  "editor.fontFamily": "'0xProto Nerd Font', monospace",
+  "editor.fontSize": 14,
+  "editor.fontWeight": 600,
+  "editor.fontLigatures": true,
+  "editor.lineHeight": 2.2,
+  "editor.lineNumbers": "relative",
+  "editor.renderWhitespace": "all",
+  "editor.wordWrap": "on",
+  "editor.minimap.maxColumn": 90,
+
+  // Editor - Behavior
+  "editor.formatOnSave": true,
+  "editor.cursorBlinking": "expand",
+  "editor.stickyScroll.enabled": false,
+  "editor.linkedEditing": true,
+  "editor.tabSize": 2,
+
+  // Editor - Scrollbar
+  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.verticalScrollbarSize": 0,
+  "editor.scrollbar.ignoreHorizontalScrollbarInContentHeight": true,
+
+  // Editor - Navigation
+  "breadcrumbs.enabled": false,
+
+  // Terminal
+  "terminal.integrated.fontSize": 13,
+
+  // Zen Mode
+  "zenMode.centerLayout": false,
+
+  // Security
+  "security.workspace.trust.untrustedFiles": "open",
+
   // Formatter
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
 }
