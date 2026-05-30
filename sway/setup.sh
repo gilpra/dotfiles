@@ -57,3 +57,25 @@ install_packages \
     "$AUR_FILE" \
     'yay -S --needed --noconfirm' \
     'yay -Q'
+
+# Enable Fish shell
+if command -v fish >/dev/null 2>&1; then
+    current_shell=$(basename "$SHELL")
+    if [[ "$current_shell" != "fish" ]]; then
+        log "Setting fish as default shell..."
+        if chsh -s "$(command -v fish)"; then
+            ok "Fish shell activated"
+        else
+            warn "Failed to change shell, run 'chsh -s $(command -v fish)' manually."
+        fi
+    fi
+fi
+
+# Enable ly display manager
+if command -v ly >/dev/null 2>&1; then
+    log "Enabling ly display manager..."
+    sudo systemctl enable ly.service
+    ok "ly enabled"
+else
+    warn "ly not found, display manager not enabled"
+fi
