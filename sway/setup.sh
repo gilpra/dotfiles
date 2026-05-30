@@ -79,3 +79,16 @@ if command -v ly >/dev/null 2>&1; then
 else
     warn "ly not found, display manager not enabled"
 fi
+
+# Ensure stow installed
+if ! command -v stow >/dev/null 2>&1; then
+    log "stow not found, installing..."
+    sudo pacman -S --needed --noconfirm stow
+    ok "stow installed"
+fi
+
+log "Creating symlinks using stow..."
+cd "$DOTFILES_DIR"
+stow --target="$HOME" dots-sway
+
+ok "Setup completed"
