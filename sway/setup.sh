@@ -40,3 +40,20 @@ install_packages \
     "$PKG_FILE" \
     'sudo pacman -S --needed --noconfirm' \
     'pacman -Q'
+
+# Install yay if missing
+if ! command -v yay >/dev/null 2>&1; then
+    log "yay not found, installing..."
+    sudo pacman -S --needed --noconfirm git base-devel
+    tmpdir="$(mktemp -d)"
+    git clone https://aur.archlinux.org/yay.git "$tmpdir/yay"
+    (cd "$tmpdir/yay" && makepkg -si --noconfirm)
+    rm -rf "$tmpdir"
+    ok "yay installed"
+fi
+
+# AUR packages
+install_packages \
+    "$AUR_FILE" \
+    'yay -S --needed --noconfirm' \
+    'yay -Q'
