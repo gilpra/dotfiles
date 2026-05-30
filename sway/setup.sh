@@ -33,3 +33,10 @@ install_packages() {
     done
 }
 
+log "Installing required packages..."
+
+# Pacman packages
+install_packages \
+    "$PKG_FILE" \
+    'sudo pacman -S --needed --noconfirm' \
+    'pacman -Q'
