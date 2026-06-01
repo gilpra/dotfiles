@@ -1,3 +1,9 @@
+# Menampilkan Fastfetch jika terminal adalah foot
+function fish_greeting
+    if test "$TERM" = foot
+        fastfetch -c ~/.config/fastfetch/presets/simple.jsonc
+    end
+end
 
 ###########
 ## ALIAS ##

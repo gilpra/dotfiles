@@ -17,3 +17,4 @@ bluez
 bluez-utils
 blueman
 power-profiles-daemon
+fastfetch
