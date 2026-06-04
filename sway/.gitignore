@@ -20,7 +20,6 @@
 
 # Thunar runtime & local state configs
 .config/Thunar/accels.scm
-.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
 
 # fish (only keep config.fish)
 .config/fish/**
