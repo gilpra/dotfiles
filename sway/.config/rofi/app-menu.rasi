@@ -1,0 +1,42 @@
+configuration {
+    modi:                        "drun";
+    drun-sort: 					 true;
+    show-icons:                  true;
+    display-drun:                "󱎱 Apps:";
+    icon-theme:                  "Tela-circle";
+}
+
+@theme "theme"
+@import "shared"
+
+window {
+    padding:    				 1em 2em 1em 2em;
+}
+
+listbox {
+    children:                    [ "inputbar", "listview", "dummy" ];
+}
+
+listview {
+    columns:                     1;
+    lines:                       6;
+}
+
+dummy {
+    background-color:            transparent;
+}
+
+element {
+    spacing:                     0.8em;
+    padding:                     0.5em 0.5em 0.5em 0.5em;
+}
+
+element-icon {
+    size:                        2em;
+    background-color:            transparent;
+}
+
+element-text {
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
