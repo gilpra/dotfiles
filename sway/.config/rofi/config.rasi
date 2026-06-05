@@ -1,0 +1,8 @@
+configuration {
+    modi:                        "drun";
+    show-icons:                  false;
+    display-drun:                "";
+}
+
+@theme "theme"
+@import "shared"

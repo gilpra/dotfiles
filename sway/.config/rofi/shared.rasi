@@ -1,0 +1,106 @@
+* {
+    font:                        "0xProto Nerd Font 10";
+    background-color:            @background;
+    text-color:                  @foreground;
+}
+
+window {
+    transparency:                "real";
+    fullscreen:                  false;
+    enabled:                     true;
+    cursor:                      "default";
+    width:                       35%;
+    spacing:                     0.5em;
+    padding:                     1em 2em 1em 2em;
+    border:                      2px solid;
+    border-radius:               5px;
+    border-color:                @selected;
+}
+
+mainbox {
+    enabled:                     true;
+    spacing:                     0.5em;
+    orientation:                 horizontal;
+    children:                    [ "listbox" ];
+    background-color:            transparent;
+}
+
+inputbar {
+    enabled:                     true;
+    children:                    [ entry ];
+    spacing:                     0.5em;
+    padding:                     0.5em;
+    cursor:                      pointer;
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+
+prompt {
+    enabled:                     true;
+    padding:                     0.5em 1.2em 0.5em 1em;
+    text-align:                  center;
+    cursor:                      default;
+    background-color:            @selected;
+    text-color:                  @background;
+    border:                      2px solid;
+    border-color:                @selected;
+    border-radius:               5px;
+}
+
+entry {
+    enabled:                     true;
+    padding:                     0.5em;
+    cursor:                      text;
+    background-color:            @background-alt;
+    text-color:                  inherit;
+    border:                      2px solid;
+    border-color:                @selected;
+    border-radius:               5px;
+    placeholder:                 "Search...";
+}
+
+listbox {
+    spacing:                     1em;
+    children:                    [ "inputbar", "listview" ];
+    background-color:            transparent;
+}
+
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       6;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    expand:                      false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    cursor:                      "default";
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+
+element {
+    enabled:                     true;
+    spacing:                     0.8em;
+    padding:                     1em;
+    cursor:                      pointer;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+
+element selected.normal {
+    background-color:            @selected;
+    text-color:                  @background;
+    border-radius:               5px;
+}
+
+element-text {
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
