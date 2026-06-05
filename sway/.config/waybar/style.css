@@ -1,0 +1,123 @@
+@define-color main-bg #15161E;
+@define-color main-fg rgb(225, 225, 245);
+@define-color wb-act-bg rgb(122, 162, 247);
+@define-color wb-act-fg rgb(26, 27, 38);
+
+/* === Global === */
+* {
+  font-family: "0xProto Nerd Font", monospace;
+  font-weight: bold;
+  font-size: 11px;
+  /* lebih pas untuk 1366x768 */
+}
+
+/* === Waybar Window === */
+window#waybar {
+  background: transparent;
+}
+
+window > box {
+  background: @main-bg;
+  border-radius: 0px;
+  margin: 0em;
+  padding: 0 0.5em;
+}
+
+/* === Tooltip === */
+tooltip {
+  background: @main-bg;
+  color: @main-fg;
+  border-radius: 4px;
+  font-size: 10px;
+}
+
+/* === Workspaces & Taskbar === */
+#workspaces,
+#taskbar {
+  margin: 0.2em 0;
+  border-radius: 4px;
+}
+
+#taskbar {
+  margin-left: 0.5em;
+  background: #25262f;
+}
+
+#taskbar button,
+#workspaces button {
+  border-radius: 4px;
+  min-width: 1.5em;
+}
+
+#taskbar button {
+  padding: 0 0.3em;
+}
+
+#workspaces button {
+  color: #9ece6a;
+  padding: 0em 0.5em 0em 0.3em;
+}
+
+#workspaces button.focused {
+  color: #ff757f;
+}
+
+#taskbar button.active {
+  background: @wb-act-bg;
+  color: @wb-act-fg;
+}
+
+/* === Modules === */
+tray,
+#temperature,
+#memory,
+#clock,
+#battery,
+#pulseaudio,
+#backlight,
+#idle_inhibitor,
+#custom-l_end,
+#custom-r_end {
+  padding: 0 0.25em;
+  font-size: 11px;
+}
+
+/* === Icon Coloring === */
+#temperature {
+  color: #bb9af7;
+}
+
+#memory {
+  color: #9ece6a;
+}
+
+#battery {
+  color: #7aa2f7;
+}
+
+#pulseaudio {
+  color: #e0af68;
+}
+
+#backlight {
+  color: #f7768e;
+}
+
+/* === Tray === */
+#tray {
+  background: #25262f;
+  border-radius: 4px;
+  margin: 0.2em 0.3em;
+  padding: 0 0.4em;
+}
+
+/* === Custom Separators === */
+#custom-l_end {
+  border-radius: 5px 0 0 5px;
+  margin-left: 0.3em;
+}
+
+#custom-r_end {
+  border-radius: 0 5px 5px 0;
+  margin-right: 0.3em;
+}

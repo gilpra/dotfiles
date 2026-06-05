@@ -20,3 +20,4 @@ power-profiles-daemon
 fastfetch
 ristretto
 rofi-wayland
+waybar
