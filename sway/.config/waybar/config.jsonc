@@ -39,6 +39,13 @@
             "backlight"
         ]
     },
+    // === Group: Control Panel ===
+    "group/control-panel": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/networkmanager"
+        ]
+    },
     // === Left Modules ===
     "tray": {
         "icon-size": 18,
