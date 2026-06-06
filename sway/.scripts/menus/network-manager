@@ -36,3 +36,28 @@ get_status() {
     echo "<span color=\"$ON_COLOR\">${SIGNAL_ICONS[$level]}</span>"
   fi
 }
+
+
+# Connect
+connect_wifi() {
+  ssid="$1"
+
+  if nmcli connection show | grep -q "^$ssid"; then
+    nmcli connection up "$ssid" && notify-send "Wi-Fi" "Connected to $ssid"
+    return
+  fi
+
+  while true; do
+    pass=$(rofi -dmenu -password -p "Password for $ssid:" -theme ~/.config/rofi/input.rasi)
+    [[ -z "$pass" ]] && notify-send "Wi-Fi" "Cancelled" && exit 0
+
+    if nmcli device wifi connect "$ssid" password "$pass"; then
+      notify-send "Wi-Fi" "Connected to $ssid"
+      break
+    else
+      notify-send "Wi-Fi" "Wrong password, try again"
+      nmcli connection delete "$ssid" 2>/dev/null
+    fi
+  done
+}
+
