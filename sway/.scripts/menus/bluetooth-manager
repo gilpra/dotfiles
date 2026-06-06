@@ -35,31 +35,37 @@ main_menu() {
         else
             toggle="$ICON_ON Enable Bluetooth"
             cmd="power on"
-        fi
+       fi
 
-        choice=$(printf "%s\n%s\n%s" \
-            "$toggle" "$ICON_MGR Manage Bluetooth" "$ICON_SVC Disable Service" |
-            rofi -dmenu -p "Bluetooth:" -theme ~/.config/rofi/menu.rasi)
+       choice=$(printf "%s\n%s\n%s" \
+            "$toggle" "$ICON_MGR Manage Bluetooth" "$ICON_SVC Disable Service" \
+            | rofi -dmenu -p "Bluetooth:" -theme ~/.config/rofi/menu.rasi)
 
         case "$choice" in
-        "$toggle")
-            bluetoothctl <<<"$cmd"
-            notify-send "Bluetooth" "Bluetooth $(echo $cmd | awk '{print $2}')"
-            ;;
-        "$ICON_MGR Manage Bluetooth")
-            blueman-manager &
-            ;;
-        "$ICON_SVC Disable Service")
-            pkexec systemctl disable --now bluetooth.service
-            notify-send "Bluetooth" "Service disabled"
-            ;;
+            "$toggle")
+                bluetoothctl <<< "$cmd"
+                notify-send "Bluetooth" "Bluetooth $(echo $cmd | awk '{print $2}')"
+                ;;
+            "$ICON_MGR Manage Bluetooth")
+                blueman-manager &
+                ;;
+            "$ICON_SVC Disable Service")
+                pkexec systemctl disable --now bluetooth.service
+                notify-send "Bluetooth" "Service disabled"
+                ;;
         esac
-
+    
     else
-        choice=$(echo "$ICON_SVC Enable Service" |
-            rofi -dmenu -p "Bluetooth:" -theme ~/.config/rofi/menu.rasi)
+        choice=$(echo "$ICON_SVC Enable Service" \
+            | rofi -dmenu -p "Bluetooth:" -theme ~/.config/rofi/menu.rasi)
 
-        [[ "$choice" ]] && pkexec systemctl start bluetooth.service &&
-            notify-send "Bluetooth" "Service enabled"
+        [[ "$choice" ]] && pkexec systemctl start bluetooth.service \
+            && notify-send "Bluetooth" "Service enabled"
     fi
 }
+
+case $1 in
+    --status) get_status ;;
+    *) main_menu ;;
+esac
+
