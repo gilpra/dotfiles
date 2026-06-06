@@ -25,3 +25,24 @@ get_status() {
     fi
 }
 
+main_menu() {
+    if systemctl -q is-active bluetooth.service; then
+
+        powered=$(bluetoothctl show | grep -Po '(?<=Powered: )\w+' 2>/dev/null)
+        if [[ "$powered" == "yes" ]]; then
+            toggle="$ICON_OFF Disable Bluetooth"
+            cmd="power off"
+        else
+            toggle="$ICON_ON Enable Bluetooth"
+            cmd="power on"
+        fi
+    fi
+
+    case "$choice" in
+    "$toggle")
+        bluetoothctl <<<"$cmd"
+        notify-send "Bluetooth" "Bluetooth $(echo $cmd | awk '{print $2}')"
+        ;;
+    esac
+
+}
