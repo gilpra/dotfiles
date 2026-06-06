@@ -1,0 +1,23 @@
+#!/bin/bash
+
+ON_COLOR="#9ece6a"
+OFF_COLOR="#f7768e"
+SERVICE_OFF_COLOR="#545c7e"
+ICON_OFF="󰖪"
+ICON_ON="󱚼"
+
+get_status() {
+  wifi_state=$(nmcli -t -f WIFI g)
+
+  [[ "$wifi_state" != "enabled" ]] && {
+    echo "<span color=\"$SERVICE_OFF_COLOR\">$ICON_OFF</span>"
+    return
+  }
+
+  info=$(nmcli -t -f IN-USE,SIGNAL,SECURITY device wifi | grep '^*')
+
+  [[ -z "$info" ]] && {
+    echo "<span color=\"$OFF_COLOR\">$ICON_ON</span>"
+    return
+  }
+}
