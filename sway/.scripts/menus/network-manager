@@ -61,3 +61,17 @@ connect_wifi() {
   done
 }
 
+# Disconnect
+disconnect_wifi() {
+  current=$(nmcli -t -f IN-USE,SSID device wifi | grep '^*' | cut -d: -f2)
+  [[ -n "$current" ]] && nmcli connection down "$current" && notify-send "Wi-Fi" "Disconnected"
+}
+
+# Forget
+forget_wifi() {
+  ssid=$(nmcli -t -f NAME connection show | sort | rofi -dmenu -p "Forget SSID:" -theme ~/.config/rofi/menu.rasi)
+  [[ -z "$ssid" ]] && exit 0
+
+  nmcli connection delete "$ssid"
+  notify-send "Wi-Fi" "Forgot $ssid"
+}
