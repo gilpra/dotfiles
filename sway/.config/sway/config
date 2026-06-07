@@ -85,6 +85,8 @@ bindsym $mod+f exec $browser
 bindsym $mod+e exec $filemanager
 bindsym $mod+space exec rofi -show drun -theme ~/.config/rofi/app-menu.rasi
 bindsym $mod+b exec sh ~/.scripts/toggle-waybar
+bindsym $mod+x exec sh ~/.scripts/menus/powermenu
+bindsym $mod+w exec sh ~/.scripts/menus/network-manager
 
 # Special keys to adjust brightness via brightnessctl
 bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
