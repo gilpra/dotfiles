@@ -1,0 +1,52 @@
+configuration {
+    show-icons:					false;
+}
+
+@theme "theme"
+@import "shared"
+
+window {
+	width:                      50%;
+    padding:					2em 3em;
+}
+
+inputbar {
+    children:                   [ prompt ];
+}
+
+prompt {
+    font:                       "0xProto Nerd Font bold 10";
+    padding:                    0.5em 1.2em 0.5em 1em;
+    background-color:           @active;
+    text-color:                 @selected;
+    border:						2px solid;
+    border-color:				#c53b53;
+}
+
+listbox {
+    children:                   [ "inputbar", "listview" ];
+}
+
+listview {
+    columns:                    4;
+    lines:                      1;
+    spacing:                    15px;
+    padding:			0px 0.5em;
+}
+
+element {
+    padding:					30px 20px 30px 5px;
+    background-color:           @background-alt;
+}
+
+element-text {
+    font:                       "0xProto Nerd Font bold 35";
+    background-color:           transparent;
+    text-color:                 @foreground;
+    vertical-align:             0.5;
+    horizontal-align:           0.5;
+}
+
+element selected.normal {
+    background-color:           @active;
+}
