@@ -23,3 +23,4 @@ rofi-wayland
 waybar
 wl-clipboard
 cliphist
+mpv
