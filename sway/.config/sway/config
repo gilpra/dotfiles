@@ -35,6 +35,9 @@ exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 output eDP-1 resolution 1366x768 position 0,0 scale 1
 
+# Wallpaper
+output * background ~/.wallpapers/ganyu.png fill
+
 # Cursor theme
 seat seat0 xcursor_theme Bibata-Modern-Ice 24
 
