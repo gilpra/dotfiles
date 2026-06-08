@@ -21,3 +21,5 @@ fastfetch
 ristretto
 rofi-wayland
 waybar
+wl-clipboard
+cliphist
