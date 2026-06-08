@@ -36,3 +36,23 @@ stop_music() {
     fi
 }
 
+# Fungsi menambahkan URL ke playlist favorit
+add_to_playlist() {
+    local url
+    url=$(rofi -dmenu -theme ~/.config/rofi/input.rasi -p "Add URL to Favorite:")
+    [[ -z "$url" ]] && notify-send "Music" "Empty URL" && return
+
+    echo "$url" >>"$MUSIC_FAV"
+    notify-send "Music" "Added to favorite"
+}
+
+# Fungsi memutar playlist favorit
+play_favorite() {
+    [[ ! -s "$MUSIC_FAV" ]] && notify-send "Music" "Favorite list empty" && return
+    is_running && notify-send "Music" "Already playing" && return
+
+    nohup mpv --no-video --really-quiet --ytdl-format=ba --loop-playlist=inf --playlist="$MUSIC_FAV" >/dev/null 2>&1 &
+    echo $! >"$PID_FILE"
+    notify-send "Music" "Playing favorites"
+}
+
