@@ -56,3 +56,24 @@ play_favorite() {
     notify-send "Music" "Playing favorites"
 }
 
+# Menu Rofi
+menu() {
+    local choice
+    choice=$(
+        printf "Play URL\nStop Music\nPlay Favorite\nAdd to Playlist" |
+            rofi -dmenu -p "Music Manager" -theme ~/.config/rofi/menu.rasi
+    )
+
+    case "$choice" in
+    "Play URL")
+        local url
+        url=$(rofi -dmenu -theme ~/.config/rofi/input.rasi -p "Enter URL:")
+        play_url "$url"
+        ;;
+    "Stop Music") stop_music ;;
+    "Play Favorite") play_favorite ;;
+    "Add to Playlist") add_to_playlist ;;
+    esac
+}
+
+menu
