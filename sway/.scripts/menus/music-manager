@@ -12,3 +12,27 @@ is_running() {
     [[ -f "$PID_FILE" ]] && ps -p "$(cat "$PID_FILE")" >/dev/null 2>&1
 }
 
+# Fungsi memutar musik dari URL
+play_url() {
+    local url="$1"
+
+    [[ -z "$url" ]] && notify-send "Music" "No URL provided" && return
+    is_running && notify-send "Music" "Already playing" && return
+
+    nohup mpv --no-video --really-quiet --ytdl-format=ba --loop "$url" >/dev/null 2>&1 &
+    echo $! >"$PID_FILE"
+    notify-send "Music" "Playing audio"
+}
+
+# Fungsi menghentikan musik
+stop_music() {
+    if is_running; then
+        kill "$(cat "$PID_FILE")" 2>/dev/null
+        rm -f "$PID_FILE"
+        notify-send "Music" "Stopped"
+    else
+        rm -f "$PID_FILE" # bersihkan PID invalid
+        notify-send "Music" "Nothing is playing"
+    fi
+}
+
