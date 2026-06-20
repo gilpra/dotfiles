@@ -3,6 +3,11 @@ if status is-login
     fish ~/.config/sway/gsetting.sh
 end
 
+# Inisialisasi Starship jika sesi interaktif
+if status --is-interactive
+    starship init fish | source
+end
+
 # Menampilkan Fastfetch jika terminal adalah foot
 function fish_greeting
     if test "$TERM" = foot
