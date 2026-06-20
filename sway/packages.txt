@@ -26,3 +26,4 @@ cliphist
 mpv
 yt-dlp
 starship
+zoxide
