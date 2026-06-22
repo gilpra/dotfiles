@@ -103,6 +103,9 @@ bindsym $mod+x exec sh ~/.scripts/menus/powermenu
 bindsym $mod+w exec sh ~/.scripts/menus/network-manager
 bindsym $mod+m exec sh ~/.scripts/menus/music-manager
 
+# Screenshot
+bindsym Print exec ~/.scripts/screenshot
+
 # Special keys to adjust brightness via brightnessctl
 bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+

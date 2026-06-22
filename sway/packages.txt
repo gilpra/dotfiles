@@ -27,3 +27,4 @@ mpv
 yt-dlp
 starship
 zoxide
+grim
