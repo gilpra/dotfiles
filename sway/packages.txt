@@ -30,3 +30,4 @@ starship
 zoxide
 grim
 autotiling
+yazi
