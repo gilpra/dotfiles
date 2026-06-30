@@ -105,6 +105,7 @@ bindsym $mod+b exec sh ~/.scripts/toggle-waybar
 bindsym $mod+x exec sh ~/.scripts/menus/powermenu
 bindsym $mod+w exec sh ~/.scripts/menus/network-manager
 bindsym $mod+m exec sh ~/.scripts/menus/music-manager
+bindsym $mod+z exec hyprpicker -a
 
 # Screenshot
 bindsym Print exec ~/.scripts/screenshot

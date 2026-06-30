@@ -31,3 +31,4 @@ zoxide
 grim
 autotiling
 yazi
+hyprpicker
