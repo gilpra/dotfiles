@@ -72,12 +72,15 @@ if command -v fish >/dev/null 2>&1; then
 fi
 
 # Enable ly display manager
-if command -v ly >/dev/null 2>&1; then
+if systemctl list-unit-files | grep "^ly.service"; then
     log "Enabling ly display manager..."
-    sudo systemctl enable ly.service
-    ok "ly enabled"
+    if sudo systemctl enable ly.service >/dev/null 2>&1; then
+        ok "ly enabled"
+    else
+        warn "Failed to enable ly"
+    fi
 else
-    warn "ly not found, display manager not enabled"
+    warn "ly.service not found, display manager not enabled"
 fi
 
 # Ensure stow installed
