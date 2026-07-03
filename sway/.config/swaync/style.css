@@ -1,0 +1,213 @@
+/* Tokyo Night Theme for swaync */
+
+@define-color tn-bg #25262F;
+@define-color tn-bg-alt #15161E;
+@define-color tn-bg-hover #111218;
+@define-color tn-fg #c0caf5;
+@define-color tn-border #FFFFFF;
+@define-color tn-urgent #FF757F;
+@define-color tn-accent #759BEC;
+
+/* Global font */
+* {
+  font-family: "0xProto Nerd Font", sans-serif;
+  color: @tn-fg;
+  font-size: 14px;
+}
+
+/* Notification row */
+.notification-row {
+  outline: none;
+  margin: 0px;
+}
+
+/* Notification group */
+.notification-group {
+  background: @tn-bg-alt;
+  border-radius: 12px;
+}
+
+/* Notification card */
+.notification {
+  border-radius: 12px;
+  margin: 1px 1px;
+  background: @tn-bg-alt;
+  border: 2px solid @tn-border;
+}
+
+/* Critical notifications */
+.critical {
+  background: @tn-urgent;
+  color: @tn-bg-alt;
+  padding: 2px;
+  border-radius: 12px;
+}
+
+.notification-content {
+  background: transparent;
+  padding: 8px;
+  border-radius: 12px;
+}
+
+/* Close button */
+.close-button {
+  background: rgba(255, 255, 255, 0.08);
+  color: @tn-fg;
+  border-radius: 50%;
+  min-width: 22px;
+  min-height: 22px;
+  border: none;
+  margin: 8px;
+}
+.close-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Buttons */
+.notification-default-action,
+.notification-action {
+  background: @tn-bg-alt;
+  border-radius: 10px;
+  padding: 6px;
+  color: @tn-fg;
+}
+.notification-default-action:hover,
+.notification-action:hover {
+  background: @tn-bg-hover;
+}
+
+/* Text */
+.summary {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0px 12px;
+}
+.time {
+  font-size: 13px;
+  opacity: 0.7;
+}
+.body {
+  font-size: 14px;
+  opacity: 0.9;
+  margin: 0px 12px;
+}
+
+/* Control center */
+.control-center {
+  background: @tn-bg-alt;
+  border-radius: 12px;
+  border: 2px solid @tn-border;
+}
+
+.control-center-list,
+.floating-notifications,
+.blank-window {
+  background: transparent;
+}
+
+/* Title widget */
+.widget-title {
+  background: @tn-bg;
+  border-radius: 10px;
+  padding: 5px 12px;
+  margin: 10px 12px 3px 12px;
+  font-weight: bold;
+}
+.widget-title > button {
+  background: @tn-bg;
+  border: 2px solid @tn-border;
+  border-radius: 10px;
+  padding: 4px 10px;
+}
+.widget-title > button:hover {
+  background: @tn-bg-hover;
+}
+
+/* DND */
+.widget-dnd {
+  background: @tn-bg;
+  border-radius: 10px;
+  padding: 5px 12px;
+  margin: 3px 12px;
+  font-size: 15px;
+}
+.widget-dnd > switch {
+  background: @tn-bg;
+  border: 2px solid @tn-border;
+  border-radius: 12px;
+}
+.widget-dnd > switch:checked {
+  background: @tn-accent;
+}
+.widget-dnd > switch slider {
+  background: @tn-fg;
+  border-radius: 10px;
+}
+
+/* Label widget */
+.widget-label > label {
+  font-size: 15px;
+}
+
+/* MPRIS widget */
+.widget-mpris {
+  margin: 0px 0px;
+}
+
+.widget-mpris-title {
+  font-weight: bold;
+  font-size: 16px;
+}
+.widget-mpris-subtitle {
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+/* Volume & Backlight */
+.widget-volume,
+.widget-backlight {
+  background: @tn-bg;
+  margin: 0px 10px;
+  padding: 8px;
+}
+
+.widget-backlight {
+  border-radius: 12px 12px 0px 0px;
+}
+
+.widget-volume {
+  border-radius: 0px 0px 12px 12px;
+}
+
+/* Button Grid */
+.widget-buttons-grid {
+  font-size: x-large;
+  padding: 5px;
+  margin: 10px;
+  background: @tn-bg;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  margin: 3px;
+  color: @tn-bg-alt;
+  border-radius: 10px;
+  padding: 6px 10px;
+  border: 2px solid @tn-border;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild:first-child {
+  margin-left: 20px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild {
+  background: transparent;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+  background: @tn-accent;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:checked {
+  background: @tn-accent;
+  color: @tn-bg;
+}

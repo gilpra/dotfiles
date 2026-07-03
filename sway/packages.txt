@@ -32,3 +32,4 @@ grim
 autotiling
 yazi
 hyprpicker
+swaync
