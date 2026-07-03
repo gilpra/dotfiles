@@ -18,8 +18,8 @@ window#waybar {
 
 window > box {
   background: @main-bg;
-  border-radius: 0px;
-  margin: 0em;
+  border-radius: 5px;
+  margin: 3px 3em 0em 3em;
   padding: 0 0.5em;
 }
 
