@@ -18,7 +18,7 @@ listbox {
 }
 
 listview {
-    columns:                     1;
+    columns:                     2;
     lines:                       6;
 }
 
