@@ -36,6 +36,9 @@ exec wl-paste --type image --watch cliphist store
 # Autotiling
 exec_always autotiling
 
+# Notification Daemon
+exec swaync
+
 ##############
 ### OUTPUT ###
 ##############
@@ -105,6 +108,7 @@ bindsym $mod+b exec sh ~/.scripts/toggle-waybar
 bindsym $mod+x exec sh ~/.scripts/menus/powermenu
 bindsym $mod+w exec sh ~/.scripts/menus/network-manager
 bindsym $mod+m exec sh ~/.scripts/menus/music-manager
+bindsym $mod+c exec sh ~/.scripts/menus/clipboard-manager
 bindsym $mod+z exec hyprpicker -a
 
 # Screenshot
