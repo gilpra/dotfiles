@@ -104,15 +104,15 @@ bindsym $mod+q kill
 bindsym $mod+f exec $browser
 bindsym $mod+e exec $filemanager
 bindsym $mod+space exec rofi -show drun -theme ~/.config/rofi/app-menu.rasi
-bindsym $mod+b exec sh ~/.scripts/toggle-waybar
-bindsym $mod+x exec sh ~/.scripts/menus/powermenu
-bindsym $mod+w exec sh ~/.scripts/menus/network-manager
-bindsym $mod+m exec sh ~/.scripts/menus/music-manager
-bindsym $mod+c exec sh ~/.scripts/menus/clipboard-manager
+bindsym $mod+b exec sh toggle-waybar
+bindsym $mod+x exec sh ~/.local/bin/menus/menus/powermenu
+bindsym $mod+w exec sh ~/.local/bin/menus/network-manager
+bindsym $mod+m exec sh ~/.local/bin/menus/music-manager
+bindsym $mod+c exec sh ~/.local/bin/menus/clipboard-manager
 bindsym $mod+z exec hyprpicker -a
 
 # Screenshot
-bindsym Print exec ~/.scripts/screenshot
+bindsym Print exec screenshot
 
 # Special keys to adjust brightness via brightnessctl
 bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
