@@ -3953,11 +3953,11 @@ tabbar undershoot {
 }
 
 tabbar undershoot.left {
-  background: linear-gradient(to right, #323449, rgba(0, 0, 0, 0) 20px);
+  background: linear-gradient(to right, #1A1B26, rgba(0, 0, 0, 0) 20px);
 }
 
 tabbar undershoot.right {
-  background: linear-gradient(to left, #323449, rgba(0, 0, 0, 0) 20px);
+  background: linear-gradient(to left, #1A1B26, rgba(0, 0, 0, 0) 20px);
 }
 
 tabbar .needs-attention-left undershoot.left {
@@ -10686,7 +10686,7 @@ themeswitcher checkbutton.dark {
 /* widget base background color */
 @define-color theme_bg_color #15151D;
 /* text widgets and the like base background color */
-@define-color theme_base_color #323449;
+@define-color theme_base_color #1A1B26;
 /* base background color of selections */
 @define-color theme_selected_bg_color #27a1b9;
 /* text/foreground color of selections */
@@ -10696,7 +10696,7 @@ themeswitcher checkbutton.dark {
 /* text foreground color of insensitive widgets */
 @define-color insensitive_fg_color rgba(233, 233, 237, 0.5);
 /* insensitive text widgets and the like base background color */
-@define-color insensitive_base_color #323449;
+@define-color insensitive_base_color #1A1B26;
 /* widget text/foreground color on backdrop windows */
 @define-color theme_unfocused_fg_color #e9e9ed;
 /* text color for entries, views and content in general on backdrop windows */
@@ -10704,7 +10704,7 @@ themeswitcher checkbutton.dark {
 /* widget base background color on backdrop windows */
 @define-color theme_unfocused_bg_color #15151D;
 /* text widgets and the like base background color on backdrop windows */
-@define-color theme_unfocused_base_color #323449;
+@define-color theme_unfocused_base_color #1A1B26;
 /* base background color of selections on backdrop windows */
 @define-color theme_unfocused_selected_bg_color #27a1b9;
 /* text/foreground color of selections on backdrop windows */
@@ -10735,10 +10735,10 @@ read if you used those and something break with a version upgrade you're on your
 @define-color wm_button_hover_bg #e1e2e7;
 @define-color wm_button_active_bg #e2e3e8;
 /* FIXME this is really an API */
-@define-color content_view_bg #323449;
+@define-color content_view_bg #1A1B26;
 @define-color placeholder_text_color #b2b3bc;
 /* Very contrasty background for text views (@theme_text_color foreground) */
-@define-color text_view_bg #323449;
+@define-color text_view_bg #1A1B26;
 @define-color budgie_tasklist_indicator_color rgba(117, 117, 125, 0.7);
 @define-color budgie_tasklist_indicator_color_active #27a1b9;
 @define-color budgie_tasklist_indicator_color_active_window rgba(36, 125, 146, 0.816);
@@ -10864,7 +10864,7 @@ read if you used those and something break with a version upgrade you're on your
 /* Window and view colors */
 @define-color window_bg_color #15151D;                 /* window background color */
 @define-color window_fg_color #e9e9ed;                 /* window foreground color */
-@define-color view_bg_color #323449;                   /* view background color */
+@define-color view_bg_color #1A1B26;                   /* view background color */
 @define-color view_fg_color #e9e9ed;                   /* view foreground color */
 
 /* Header bar colors */
@@ -10875,10 +10875,10 @@ read if you used those and something break with a version upgrade you're on your
 @define-color headerbar_shade_color rgba(233, 233, 237, 0.12);   /* header bar shade color */
 
 /* Card, dialog, and popover colors */
-@define-color card_bg_color #323449;                   /* card background color */
+@define-color card_bg_color #1A1B26;                   /* card background color */
 @define-color card_fg_color #e9e9ed;                   /* card foreground color */
 @define-color card_shade_color rgba(233, 233, 237, 0.12);  /* card shade color */
-@define-color dialog_bg_color #323449;                 /* dialog background color */
+@define-color dialog_bg_color #1A1B26;                 /* dialog background color */
 @define-color dialog_fg_color #e9e9ed;                 /* dialog foreground color */
 @define-color popover_bg_color #1A1B26;                /* popover background color */
 @define-color popover_fg_color #e9e9ed;                /* popover foreground color */

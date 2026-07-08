@@ -6337,7 +6337,7 @@ popover.emoji-completion .emoji:hover {
 
 .nautilus-window.background.csd:not(.unified) paned > separator.wide {
   min-width: 12px;
-  box-shadow: 12px 0 #323449;
+  box-shadow: 12px 0 #1A1B26;
   background-color: #15151D;
   background-image: image(#4b4c5f);
 }
@@ -8807,7 +8807,7 @@ overlay grid.horizontal > revealer > scrolledwindow.frame:dir(rtl) {
 }
 
 .side-panel .view {
-  background-image: image(#323449);
+  background-image: image(#1A1B26);
 }
 
 .side-panel .view:hover {
@@ -9098,7 +9098,7 @@ box.dialog-vbox scrolledwindow.related {
 }
 
 list.categories {
-  background-image: image(#323449);
+  background-image: image(#1A1B26);
 }
 
 /*********
@@ -12048,20 +12048,20 @@ menubar.-vala-panel-background > menuitem:disabled {
 @define-color theme_fg_color #e9e9ed;                 /* widget text/foreground color */
 @define-color theme_text_color #e9e9ed;               /* text color for entries, views and content in general */
 @define-color theme_bg_color #15151D;                 /* widget base background color */
-@define-color theme_base_color #323449;               /* text widgets and the like base background color */
+@define-color theme_base_color #1A1B26;               /* text widgets and the like base background color */
 @define-color theme_selected_bg_color #27a1b9;        /* base background color of selections */
 @define-color theme_selected_fg_color #e9e9ed;        /* text/foreground color of selections */
 
 /* Insensitive widget colors */
 @define-color insensitive_bg_color #15151D;           /* base background color of insensitive widgets */
 @define-color insensitive_fg_color rgba(233, 233, 237, 0.5);  /* text foreground color of insensitive widgets */
-@define-color insensitive_base_color #323449;         /* insensitive text widgets and the like base background color */
+@define-color insensitive_base_color #1A1B26;         /* insensitive text widgets and the like base background color */
 
 /* Unfocused/Backdrop theme colors */
 @define-color theme_unfocused_fg_color #e9e9ed;       /* widget text/foreground color on backdrop windows */
 @define-color theme_unfocused_text_color #e9e9ed;     /* text color for entries, views and content in general on backdrop windows */
 @define-color theme_unfocused_bg_color #15151D;       /* widget base background color on backdrop windows */
-@define-color theme_unfocused_base_color #323449;     /* text widgets and the like base background color on backdrop windows */
+@define-color theme_unfocused_base_color #1A1B26;     /* text widgets and the like base background color on backdrop windows */
 @define-color theme_unfocused_selected_bg_color #27a1b9;  /* base background color of selections on backdrop windows */
 @define-color theme_unfocused_selected_fg_color #e9e9ed;  /* text/foreground color of selections on backdrop windows */
 @define-color unfocused_insensitive_color rgba(233, 233, 237, 0.5);  /* insensitive color on backdrop windows */
@@ -12091,9 +12091,9 @@ menubar.-vala-panel-background > menuitem:disabled {
 @define-color wm_button_active_bg #e2e3e8;
 
 /* Specialized colors */
-@define-color content_view_bg #323449;               /* FIXME this is really an API */
+@define-color content_view_bg #1A1B26;               /* FIXME this is really an API */
 @define-color placeholder_text_color #b2b3bc;
-@define-color text_view_bg #323449;                  /* Very contrasty background for text views (@theme_text_color foreground) */
+@define-color text_view_bg #1A1B26;                  /* Very contrasty background for text views (@theme_text_color foreground) */
 
 /* Budgie-specific colors */
 @define-color budgie_tasklist_indicator_color rgba(117, 117, 125, 0.7);
