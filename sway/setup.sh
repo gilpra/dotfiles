@@ -92,6 +92,7 @@ fi
 
 log "Creating symlinks using stow..."
 cd "$DOTFILES_DIR"
+mkdir -p "$HOME/.local"
 stow --target="$HOME" dots-sway
 
 ok "Setup completed"
