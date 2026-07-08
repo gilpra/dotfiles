@@ -64,15 +64,15 @@
       "actions": [
         {
           "label": "󰐥",
-          "command": "sh ~/.scripts/menus/powermenu"
+          "command": "sh ~/.local/bin/menus/powermenu"
         },
         {
           "label": "",
-          "command": "sh ~/.scripts/menus/clipboard-manager"
+          "command": "sh ~/.local/bin/menus/clipboard-manager"
         },
         {
           "label": "󰌪",
-          "command": "sh ~/.scripts/menus/power-profile-manager"
+          "command": "sh ~/.local/bin/menus/power-profile-manager"
         },
         {
           "label": "",
@@ -80,7 +80,7 @@
         },
         {
           "label": "󰑢",
-          "command": "sh ~/.scripts/toggle-waybar"
+          "command": "sh ~/.local/bin/toggle-waybar"
         }
       ]
     }

@@ -160,17 +160,17 @@
         "on-scroll-down": "brightnessctl s 1%-"
     },
     "custom/bluetooth": {
-        "exec": "sh ~/.scripts/menus/bluetooth-manager --status | cat",
+        "exec": "sh ~/.local/bin/menus/bluetooth-manager --status | cat",
         "format": "{}  ",
         "interval": 5,
-        "on-click": "sh ~/.scripts/menus/bluetooth-manager",
+        "on-click": "sh ~/.local/bin/menus/bluetooth-manager",
         "tooltip": false
     },
     "custom/networkmanager": {
-        "exec": "sh ~/.scripts/menus/network-manager --status | cat",
+        "exec": "sh ~/.local/bin/menus/network-manager --status | cat",
         "format": "{}  ",
         "interval": 5,
-        "on-click": "sh ~/.scripts/menus/network-manager",
+        "on-click": "sh ~/.local/bin/menus/network-manager",
         "tooltip": false
     },
     // === Decorative Elements ===
