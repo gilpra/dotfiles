@@ -76,8 +76,11 @@ tray,
 #pulseaudio,
 #backlight,
 #idle_inhibitor,
+#custom-notification,
+#custom-clipboard,
 #custom-networkmanager,
 #custom-bluetooth,
+#custom-power,
 #custom-l_end,
 #custom-r_end {
   padding: 0 0.25em;

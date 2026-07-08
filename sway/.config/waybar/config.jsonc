@@ -43,8 +43,11 @@
     "group/control-panel": {
         "orientation": "horizontal",
         "modules": [
+            "custom/clipboard",
             "custom/bluetooth",
-            "custom/networkmanager"
+            "custom/networkmanager",
+            "custom/power",
+            "custom/notification"
         ]
     },
     // === Left Modules ===
@@ -158,6 +161,26 @@
         ],
         "on-scroll-up": "brightnessctl s 1%+",
         "on-scroll-down": "brightnessctl s 1%-"
+    },
+    "custom/notification": {
+        "tooltip": true,
+        "format": "<span> {icon}</span>",
+        "format-icons": {
+            "notification": "󱅫",
+            "none": "󰂜",
+            "dnd-notification": "󰂠",
+            "dnd-none": "󰪓",
+            "inhibited-notification": "󰂛",
+            "inhibited-none": "󰪑",
+            "dnd-inhibited-notification": "󰂛",
+            "dnd-inhibited-none": "󰪑"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
     },
     "custom/bluetooth": {
         "exec": "sh ~/.local/bin/menus/bluetooth-manager --status | cat",
