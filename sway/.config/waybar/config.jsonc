@@ -184,7 +184,7 @@
     },
     "custom/bluetooth": {
         "exec": "sh ~/.local/bin/menus/bluetooth-manager --status | cat",
-        "format": "{}  ",
+        "format": " {}  ",
         "interval": 5,
         "on-click": "sh ~/.local/bin/menus/bluetooth-manager",
         "tooltip": false
