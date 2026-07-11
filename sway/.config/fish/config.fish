@@ -34,7 +34,7 @@ alias getapptitle="swaymsg -t get_tree | jq '.. | select(.name?) | .name' | sort
 
 # Paket manajemen
 alias paccek='yay -Q | grep '
-alias upgrade='yay -Syu && flatpak upgrade'
+alias update='sudo pacman -Syu'
 
 # Git
 alias gi='git init'
@@ -46,6 +46,8 @@ alias gc='git clone '
 alias gf='git fetch'
 alias grh='git reset --hard '
 alias grr='git remote remove '
+alias gl='git log'
+alias gr='git rebase'
 
 # Docker (Membersihkan semua container, images, volume, dan network)
 alias cleandock='docker container prune -f && docker volume prune -f && docker network prune -f'
