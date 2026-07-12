@@ -95,4 +95,8 @@ cd "$DOTFILES_DIR"
 mkdir -p "$HOME/.local"
 stow --target="$HOME" dots-sway
 
+# Clone Theme
+log "Clone theme Tokyonight-dark"
+git clone https://github.com/gilpra/tokyodark-gtk "$HOME/.themes/Tokyonight-Dark"
+
 ok "Setup completed"
