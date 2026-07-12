@@ -1,33 +1,26 @@
-# Sensitive Keys / Environment
+# SENSITIVE 
 **/*.key
 **/*.pem
 **/*.crt
 **/*.env
 
-# Cache / Logs / Swap
+# CACHE / TEMP 
 **/.cache/
 **/*.swp
 **/*.bak
 **/*~
+**/*.tmp
+**/*.temp
 **/icon-theme.cache
 
-# Editors / IDE
+# EDITORS 
 **/.vscode/
 **/.idea/
 
-# PRIVACY: Don't publish personal folders/bookmarks
+# USER-SPECIFIC STATE 
 .config/gtk-3.0/bookmarks
-
-# Thunar runtime & local state configs
 .config/Thunar/accels.scm
 
-# fish (only keep config.fish)
-.config/fish/**
-!.config/fish/
-!.config/fish/config.fish
-
-# Ignore generic temp files
-*.tmp
-*.temp
-.DS_Store
-Thumbs.db
+# XFCE runtime state
+.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
+.config/xfce4/xfconf/xfce-perchannel-xml/ristretto.xml
