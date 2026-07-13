@@ -98,6 +98,12 @@ mkdir -p \
 cd "$DOTFILES_DIR"
 stow --target="$HOME" dots-sway
 
+# Clone script for screenshot in wayland
+curl -fsSL https://raw.githubusercontent.com/gilpra/dotbin/main/screenshot-wayland -o ~/.local/bin/screenshot-wayland && chmod +x ~/.local/bin/screenshot-wayland
+
+# Clone script for toggle waybar
+curl -fsSL https://raw.githubusercontent.com/gilpra/dotbin/main/toggle-waybar -o ~/.local/bin/toggle-waybar && chmod +x ~/.local/bin/toggle-waybar
+
 # Clone Theme
 log "Clone theme Tokyonight-dark"
 git clone https://github.com/gilpra/tokyodark-gtk "$HOME/.themes/Tokyonight-Dark"
