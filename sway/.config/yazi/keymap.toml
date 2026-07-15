@@ -1,0 +1,20 @@
+[mgr]
+prepend_keymap = [
+  # --- Compress ---
+  { on = [ "c", "a", "a" ], run = "plugin compress",      desc = "Archive selected files" },
+  { on = [ "c", "a", "p" ], run = "plugin compress -p",   desc = "Archive selected files (password)" },
+  { on = [ "c", "a", "h" ], run = "plugin compress -ph",  desc = "Archive selected files (password+header)" },
+  { on = [ "c", "a", "l" ], run = "plugin compress -l",   desc = "Archive selected files (compression level)" },
+  { on = [ "c", "a", "u" ], run = "plugin compress -phl", desc = "Archive selected files (password+header+level)" },
+
+  # --- Trash / Restore ---
+  { on = "u",          run = "plugin restore",     desc = "Restore last deleted files" },
+  { on = [ "R" ], run = "plugin omni-trash",  desc = "Open Trash menu" },
+  { on = [ "g", "t" ], run = "cd ~/.local/share/Trash/files", desc = "Go to Trash folder" },
+
+  # --- Mount ---
+  { on = [ "M" ], run = "plugin mount",  desc = "Open mount" },
+
+  # --- Terminal ---
+  { on = ["T"], run ='shell "foot" --orphan --confirm' , desc = "Open foot terminal here" },
+]
