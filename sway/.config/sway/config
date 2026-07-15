@@ -14,7 +14,8 @@ set $right l
 # Programs
 set $term foot
 set $browser firefox --ProfileManager
-set $filemanager thunar
+set $filemanager $term yazi
+
 
 #################
 ### AUTOSTART ###
