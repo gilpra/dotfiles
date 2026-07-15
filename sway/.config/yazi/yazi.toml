@@ -1,14 +1,60 @@
+# ~/.config/yazi/yazi.toml
+
 [mgr]
 show_hidden = true
+sort_by = "natural"
+sort_sensitive = false
+sort_dir_first = true
+linemode = "size"
+
+[preview]
+image_filter = "lanczos3"
+image_quality = 75
+max_width = 600
+max_height = 900
 
 [opener]
 play = [
-	{ run = 'mpv "$@"', orphan = true, for = "unix" },
+  { run = 'mpv "$@"', orphan = true, for = "unix" },
 ]
 edit = [
-	{ run = 'nvim "$@"', block = true, for = "unix" },
+  { run = 'nvim "$@"', block = true, for = "unix" },
 ]
+view_image = [
+  { run = 'imv-dir "$@"', orphan = true, for = "unix" },
+]
+view_pdf = [
+  { run = 'zathura "$@"', orphan = true, for = "unix" },
+]
+
+extract = [
+  { run = 'unzip "$1" -d "$(dirname "$1")"', desc = "Extract .zip", for = "unix" },
+  { run = 'tar -xzf "$1" -C "$(dirname "$1")"', desc = "Extract .tar.gz", for = "unix" },
+  { run = 'tar -xjf "$1" -C "$(dirname "$1")"', desc = "Extract .tar.bz2", for = "unix" },
+  { run = 'tar -xJf "$1" -C "$(dirname "$1")"', desc = "Extract .tar.xz", for = "unix" },
+  { run = 'tar -xf "$1" -C "$(dirname "$1")"', desc = "Extract .tar", for = "unix" },
+  { run = '7z x "$1" -o"$(dirname "$1")"', desc = "Extract .7z", for = "unix" },
+  { run = 'unrar x "$1" "$(dirname "$1")/"', desc = "Extract .rar", for = "unix" },
+]
+
 open = [
-    { run = 'ristretto "$@"', extensions = ["png", "jpg", "jpeg", "webp", "gif"], for = "unix", orphan = true },
-	{ run = 'xdg-open "$@"', desc = "Open" },
+  { run = 'xdg-open "$@"', desc = "Open with default app" },
+]
+
+[open]
+rules = [
+  { mime = "image/*",                      use = "view_image" },
+  { mime = "video/*",                      use = "play" },
+  { mime = "audio/*",                      use = "play" },
+  { mime = "application/pdf",              use = "view_pdf" },
+  { mime = "application/zip",              use = "extract" },
+  { mime = "application/x-tar",            use = "extract" },
+  { mime = "application/x-bzip2",          use = "extract" },
+  { mime = "application/gzip",             use = "extract" },
+  { mime = "application/x-xz",             use = "extract" },
+  { mime = "application/x-7z-compressed",  use = "extract" },
+  { mime = "application/zstd",             use = "extract" },
+  { mime = "application/x-rar",            use = "extract" },
+  { mime = "text/*",                        use = "edit" },
+  { mime = "*",                             use = "open" },
 ]
