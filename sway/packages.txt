@@ -28,3 +28,4 @@ autotiling
 yazi
 hyprpicker
 swaync
+udisk2
