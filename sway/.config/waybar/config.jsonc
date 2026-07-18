@@ -24,6 +24,7 @@
         "custom/l_end",
         "group/system-level",
         "custom/pipe",
+        "group/control-panel",
         "custom/r_end"
     ],
     // === Group: System Level ===
@@ -173,6 +174,11 @@
         "format": "{}  ",
         "interval": 5,
         "on-click": "sh ~/.local/bin/menus/network-manager",
+        "tooltip": false
+    },
+    "custom/power": {
+        "format": " ⏻",
+        "on-click": "sh ~/.local/bin/menus/powermenu",
         "tooltip": false
     },
     // === Decorative Elements ===
