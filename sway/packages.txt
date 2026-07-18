@@ -30,6 +30,7 @@ libnotify
 waybar
 brightnessctl
 xorg-xwayland
+mako
 zip
 unzip
 unrar
