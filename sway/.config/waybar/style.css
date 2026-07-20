@@ -1,7 +1,7 @@
-@define-color main-bg #15161E;
-@define-color main-fg rgb(225, 225, 245);
-@define-color wb-act-bg rgb(122, 162, 247);
-@define-color wb-act-fg rgb(26, 27, 38);
+@define-color main-bg #1a1b26;
+@define-color main-fg #c0caf5;
+@define-color wb-act-bg #7aa2f7;
+@define-color wb-act-fg #1a1b26;
 
 /* === Global === */
 * {
@@ -40,7 +40,7 @@ tooltip {
 
 #taskbar {
   margin-left: 0.5em;
-  background: #25262f;
+  background: #16161e;
 }
 
 #taskbar button,
@@ -59,7 +59,7 @@ tooltip {
 }
 
 #workspaces button.focused {
-  color: #ff757f;
+  color: #f7768e;
 }
 
 #taskbar button.active {
@@ -76,9 +76,9 @@ tray,
 #pulseaudio,
 #backlight,
 #idle_inhibitor,
-#custom-clipboard,
 #custom-networkmanager,
 #custom-bluetooth,
+#custom-power,
 #custom-power,
 #custom-l_end,
 #custom-r_end {
@@ -107,9 +107,13 @@ tray,
   color: #f7768e;
 }
 
+#custom-power {
+  color: #f7768e;
+}
+
 /* === Tray === */
 #tray {
-  background: #25262f;
+  background: #16161e;
   border-radius: 4px;
   margin: 0.2em 0.3em;
   padding: 0 0.4em;

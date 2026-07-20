@@ -1,13 +1,13 @@
-# Layout & Position 
+# Layout & Position
 anchor=top-right
 margin=12
 padding=12,16
 width=360
 height=120
 border-size=2
-border-radius=8
+border-radius=3
 
-# Behaviour 
+# Behaviour
 max-visible=5
 max-history=20
 default-timeout=6000
@@ -15,62 +15,56 @@ ignore-timeout=0
 sort=-time
 layer=overlay
 
-# Typography 
+# Typography
 font=0xProto Nerd Font 11
 
-# Format 
-# Tampilkan app-name, judul tebal, lalu body
+# Format
 format=<b>%s</b>\n%b
 
-# TokyoNight Storm — Default (normal urgency) 
-background-color=#15161e
+# TokyoNight Night — Default (normal urgency)
+background-color=#1a1b26
 text-color=#c0caf5
 border-color=#7aa2f7
-progress-color=over #3b4261
+progress-color=over #292e42
 
-# Urgency: Low 
+# Urgency: Low
 [urgency=low]
-background-color=#15161e
-text-color=#737aa2
-border-color=#3b4261
+background-color=#1a1b26
+text-color=#565f89
+border-color=#292e42
 default-timeout=4000
 
-# Urgency: Normal 
+# Urgency: Normal
 [urgency=normal]
-background-color=#15161e
+background-color=#1a1b26
 text-color=#c0caf5
 border-color=#7aa2f7
 default-timeout=6000
 
-# Urgency: Critical 
+# Urgency: Critical
 [urgency=critical]
-background-color=#15161e
+background-color=#1a1b26
 text-color=#f7768e
 border-color=#f7768e
 default-timeout=0
 
-# Grouped notifications 
+# Grouped notifications
 [grouped]
 format=(%g) <b>%s</b>\n%b
 border-color=#bb9af7
 
-# Hidden overflow indicator 
+# Hidden overflow indicator
 [hidden]
 format=(%h more)
-text-color=#737aa2
-border-color=#3b4261
+text-color=#565f89
+border-color=#292e42
 
-# Do Not Disturb mode 
-# Aktifkan: makoctl mode -a do-not-disturb
-# Nonaktifkan: makoctl mode -r do-not-disturb
+# Do Not Disturb mode
 [mode=do-not-disturb]
 invisible=1
 
-# App-specific overrides 
-# Warna hijau untuk notif sukses (misal dari git, build tools)
+# App-specific overrides
 [app-name=notify-send urgency=low]
 border-color=#9ece6a
-
-# Warna kuning untuk warning
 [urgency=normal app-name=dunst]
 border-color=#e0af68
