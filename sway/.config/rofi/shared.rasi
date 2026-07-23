@@ -13,7 +13,7 @@ window {
     spacing:                     0.5em;
     padding:                     1em 2em 1em 2em;
     border:                      2px solid;
-    border-radius:               5px;
+    border-radius:               3px;
     border-color:                @selected;
 }
 
@@ -44,7 +44,7 @@ prompt {
     text-color:                  @background;
     border:                      2px solid;
     border-color:                @selected;
-    border-radius:               5px;
+    border-radius:               3px;
 }
 
 entry {
@@ -55,7 +55,7 @@ entry {
     text-color:                  inherit;
     border:                      2px solid;
     border-color:                @selected;
-    border-radius:               5px;
+    border-radius:               3px;
     placeholder:                 "Search...";
 }
 
@@ -94,7 +94,7 @@ element {
 element selected.normal {
     background-color:            @selected;
     text-color:                  @background;
-    border-radius:               5px;
+    border-radius:               3px;
 }
 
 element-text {

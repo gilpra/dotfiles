@@ -1,13 +1,13 @@
 configuration {
-    show-icons:					false;
+    show-icons:				        	false;
 }
 
 @theme "theme"
 @import "shared"
 
 window {
-	width:                      50%;
-    padding:					2em 3em;
+	  width:                      50%;
+    padding:		            		2em 3em;
 }
 
 inputbar {
@@ -18,9 +18,9 @@ prompt {
     font:                       "0xProto Nerd Font bold 10";
     padding:                    0.5em 1.2em 0.5em 1em;
     background-color:           @active;
-    text-color:                 @selected;
-    border:						2px solid;
-    border-color:				#c53b53;
+    text-color:                 @background-alt;
+    border:					          	2px solid;
+    border-color:				        @active;
 }
 
 listbox {
