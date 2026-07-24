@@ -18,7 +18,7 @@ prompt {
     font:                       "0xProto Nerd Font bold 10";
     padding:                    0.5em 1.2em 0.5em 1em;
     background-color:           @active;
-    text-color:                 @background-alt;
+    text-color:                 @foreground;
     border:					          	2px solid;
     border-color:				        @active;
 }
