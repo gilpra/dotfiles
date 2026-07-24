@@ -5,7 +5,7 @@ padding=12,16
 width=360
 height=120
 border-size=2
-border-radius=3
+border-radius=0
 
 # Behaviour
 max-visible=5
