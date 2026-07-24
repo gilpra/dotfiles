@@ -53,13 +53,22 @@ unset_alt  = { fg = "#7aa2f7", bg = "#292e42" }
 
 # : }}}
 
+# : Indicator of hovered file {{{
+
+[indicator]
+parent  = { reversed = true }
+current = { reversed = true }
+preview = { underline = true }
+padding = { open = "█", close = "█" }
+
+# : }}}
 
 # : Status bar {{{
 
 [status]
 overall = { fg = "#7aa2f7" }
-sep_left  = { open = "", close = "" }
-sep_right = { open = "", close = "" }
+sep_left  = { open = "", close = "" }
+sep_right = { open = "", close = "" }
 
 
 # Progress
