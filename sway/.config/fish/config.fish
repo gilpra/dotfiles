@@ -38,6 +38,7 @@ end
 alias sudo='sudo '
 alias c='clear'
 alias vi='nvim'
+alias lg='lazygit'
 alias start='sudo systemctl start'
 alias stop='sudo systemctl stop'
 alias ff='fastfetch'
