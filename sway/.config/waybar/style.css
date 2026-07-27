@@ -31,24 +31,13 @@ tooltip {
 }
 
 /* === Workspaces & Taskbar === */
-#workspaces,
-#taskbar {
+#workspaces {
   margin: 0.2em 0;
 }
 
-#taskbar {
-  margin-left: 0.5em;
-  background: #16161e;
-}
-
-#taskbar button,
 #workspaces button {
   border-radius: 0;
   min-width: 1.5em;
-}
-
-#taskbar button {
-  padding: 0 0.3em;
 }
 
 #workspaces button {
@@ -60,13 +49,8 @@ tooltip {
   color: #f7768e;
 }
 
-#taskbar button.active {
-  background: @wb-act-bg;
-  color: @wb-act-fg;
-}
-
 /* === Modules === */
-tray,
+#tray,
 #temperature,
 #memory,
 #clock,

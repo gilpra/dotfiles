@@ -14,8 +14,7 @@
     "idle_inhibitor",
     "clock",
     "custom/r_end",
-    "tray",
-    "wlr/taskbar"
+    "tray"
   ],
   "modules-center": [
     "sway/workspaces"
@@ -68,13 +67,6 @@
       "focused": "",
       "default": "󰝣"
     }
-  },
-  "wlr/taskbar": {
-    "format": "{icon}",
-    "icon-size": 20,
-    "icon-theme": "Tela-circle",
-    "tooltip-format": "{title}",
-    "on-click": "activate"
   },
   // === Center Modules ===
   "idle_inhibitor": {
