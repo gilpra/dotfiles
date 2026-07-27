@@ -10,6 +10,7 @@ if status is-login
     set -Ux PATH $HOME/.bun/bin $PATH
     set -Ux PATH $HOME/.npm-global/bin $PATH
     set -Ux MANPAGER "nvim +Man!"
+
 end
 
 ############################
@@ -31,6 +32,38 @@ function fish_greeting
         fastfetch -c ~/.config/fastfetch/presets/simple.jsonc
     end
 end
+
+############################
+# Fzf Config
+############################
+# Export
+set -gx FZF_DEFAULT_OPTS "
+  --highlight-line
+  --info=inline-right
+  --ansi
+  --layout=reverse
+  --border=none
+  --color=bg+:#283457
+  --color=bg:#16161e
+  --color=border:#27a1b9
+  --color=fg:#c0caf5
+  --color=gutter:#16161e
+  --color=header:#ff9e64
+  --color=hl+:#2ac3de
+  --color=hl:#2ac3de
+  --color=info:#545c7e
+  --color=marker:#ff007c
+  --color=pointer:#ff007c
+  --color=prompt:#2ac3de
+  --color=query:#c0caf5:regular
+  --color=scrollbar:#27a1b9
+  --color=separator:#ff9e64
+  --color=spinner:#ff007c
+  "
+
+# Source
+fzf --fish | source
+
 
 ############################
 # Alias
@@ -79,3 +112,11 @@ alias ls='eza -al --color=always --group-directories-first --icons'
 # Journal
 alias jctl='journalctl -p 3 -xb'
 alias clrjctl='sudo journalctl --vacuum-time=1s'
+
+
+# pnpm
+set -gx PNPM_HOME "/home/gilang/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
