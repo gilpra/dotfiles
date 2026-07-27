@@ -63,6 +63,7 @@ alias gf='git fetch'
 alias grh='git reset --hard'
 alias grr='git remote remove'
 alias gl='git log'
+alias gls="git log --pretty=format:'%h | %ad | %cd | %s' --date=format:'%Y-%m-%d %H:%M:%S'"
 alias gr='git rebase'
 
 # Docker
