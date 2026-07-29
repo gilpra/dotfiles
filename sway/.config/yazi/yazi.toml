@@ -5,61 +5,50 @@ show_hidden = true
 sort_by = "natural"
 sort_sensitive = false
 sort_dir_first = true
+ratio = [0, 7, 3]
 linemode = "size"
 
 [preview]
 image_filter = "lanczos3"
 image_quality = 75
-max_width = 600
-max_height = 900
+max_width = 800
+max_height = 1000
 
 [opener]
+
 play = [
-  { run = 'mpv "$@"', orphan = true, for = "unix" },
-]
-edit = [
-  { run = 'nvim "$@"', block = true, for = "unix" },
-]
-view_image = [
-  { run = 'imv-dir "$@"', orphan = true, for = "unix" },
+  { run = 'mpv "$@"', orphan = true },
 ]
 
-extract_zip = [
-  { run = 'unzip "$1" -d "$(dirname "$1")"', desc = "Extract .zip", for = "unix" },
+edit = [
+  { run = 'nvim "$@"', block = true },
 ]
-extract_tar_gz = [
-  { run = 'tar -xzf "$1" -C "$(dirname "$1")"', desc = "Extract .tar.gz", for = "unix" },
+
+view_image = [
+  { run = 'imv-dir "$@"', orphan = true },
 ]
-extract_tar_bz2 = [
-  { run = 'tar -xjf "$1" -C "$(dirname "$1")"', desc = "Extract .tar.bz2", for = "unix" },
-]
-extract_tar_xz = [
-  { run = 'tar -xJf "$1" -C "$(dirname "$1")"', desc = "Extract .tar.xz", for = "unix" },
-]
-extract_7z = [
-  { run = '7z x "$1" -o"$(dirname "$1")"', desc = "Extract .7z", for = "unix" },
-]
-extract_rar = [
-  { run = 'unrar x "$1" "$(dirname "$1")/"', desc = "Extract .rar", for = "unix" },
+
+extract = [
+  { run = 'bsdtar -xf "$@" -C "$(dirname "$1")"', desc = "Extract archive" },
 ]
 
 open = [
-  { run = 'xdg-open "$@"', desc = "Open with default app" },
+  { run = 'xdg-open "$@"', orphan = true },
 ]
 
 [open]
 rules = [
-  { mime = "image/*",                       use = "view_image" },
-  { mime = "video/*",                       use = "play" },
-  { mime = "audio/*",                       use = "play" },
-  { mime = "application/zip",               use = "extract_zip" },
-  { mime = "application/gzip",              use = "extract_tar_gz" },
-  { mime = "application/x-tar",             use = "extract_tar_gz" },
-  { mime = "application/x-bzip2",           use = "extract_tar_bz2" },
-  { mime = "application/x-xz",              use = "extract_tar_xz" },
-  { mime = "application/x-7z-compressed",   use = "extract_7z" },
-  { mime = "application/x-rar",             use = "extract_rar" },
-  { mime = "application/zstd",              use = "extract_tar_gz" },
-  { mime = "text/*",                         use = "edit" },
-  { mime = "*",                              use = "open" },
+  { mime = "image/*", use = "view_image" },
+  { mime = "video/*", use = "play" },
+  { mime = "audio/*", use = "play" },
+
+  { mime = "application/*zip*", use = "extract" },
+  { mime = "application/x-tar", use = "extract" },
+  { mime = "application/x-7z-compressed", use = "extract" },
+  { mime = "application/x-rar", use = "extract" },
+  { mime = "application/*compressed*", use = "extract" },
+
+  { mime = "text/*", use = "edit" },
+
+  { mime = "*", use = "open" },
 ]

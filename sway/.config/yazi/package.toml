@@ -14,14 +14,14 @@ rev = "1962818"
 hash = "91937a4a9b779eabc6983e258befdfe9"
 
 [[plugin.deps]]
-use = "yazi-rs/plugins:full-border"
-rev = "7749958"
-hash = "6fa6a05a81c98dd000fbca3cca6e9682"
+use = "yazi-rs/plugins:no-status"
+rev = "ac82af3"
+hash = "3e023d31f29201efdac2a6ae35fedb78"
 
 [[plugin.deps]]
-use = "Rolv-Apneseth/starship"
-rev = "a837101"
-hash = "635b0feb9215772d22020eb0abf0bb34"
+use = "yazi-rs/plugins:smart-filter"
+rev = "ac82af3"
+hash = "c887903a63a2ff520081b6d90a4b3392"
 
 [[flavor.deps]]
 use = "BennyOe/tokyo-night"
