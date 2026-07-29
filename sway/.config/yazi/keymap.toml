@@ -1,5 +1,7 @@
 [mgr]
 prepend_keymap = [
+  { on = [ "g", "p" ], run = "cd ~/Projects/Programming/", desc = "Go ~/Projects/Programming" },
+
   # --- Compress ---
   { on = [ "c", "a", "a" ], run = "plugin compress",      desc = "Archive selected files" },
   { on = [ "c", "a", "p" ], run = "plugin compress -p",   desc = "Archive selected files (password)" },
