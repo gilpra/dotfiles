@@ -4,6 +4,8 @@ BAT_PATH="/sys/class/power_supply/BAT1"
 LOW=20
 CRITICAL=10
 
+[ -f "$BAT_PATH/capacity" ] || exit 0
+
 STATE="normal"
 
 while true; do
@@ -22,7 +24,6 @@ while true; do
     fi
 
   else
-    # Reset kalau ngecas / penuh
     STATE="normal"
   fi
 
