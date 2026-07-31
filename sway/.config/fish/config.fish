@@ -70,8 +70,10 @@ fzf --fish | source
 ############################
 alias sudo='sudo '
 alias c='clear'
-alias vi='nvim'
+alias v='nvim'
+alias vi='nvim .'
 alias lg='lazygit'
+alias tmx='tmux new-session -A -s main'
 alias start='sudo systemctl start'
 alias stop='sudo systemctl stop'
 alias ff='fastfetch'
