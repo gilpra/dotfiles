@@ -45,8 +45,7 @@
     "modules": [
       "custom/clipboard",
       "custom/bluetooth",
-      "custom/networkmanager",
-      "custom/power"
+      "custom/networkmanager"
     ]
   },
   // === Left Modules ===
@@ -163,14 +162,9 @@
   },
   "custom/networkmanager": {
     "exec": "sh ~/.local/bin/menus/network-manager --status | cat",
-    "format": "{}  ",
+    "format": "{} ",
     "interval": 5,
     "on-click": "sh ~/.local/bin/menus/network-manager",
-    "tooltip": false
-  },
-  "custom/power": {
-    "format": " ⏻",
-    "on-click": "sh ~/.local/bin/menus/powermenu",
     "tooltip": false
   },
   // === Decorative Elements ===
@@ -185,5 +179,5 @@
   "custom/r_end": {
     "format": " ",
     "tooltip": false
-  },
+  }
 }
