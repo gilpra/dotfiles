@@ -95,6 +95,11 @@
       "type": "uptime",
       "key": " "
     },
+    {
+      "type": "command",
+      "key": "󱦟 ",
+      "text": "echo $(( ($(date +%s) - $(stat -c %W /)) / 86400 )) days"
+    },
     "break",
     {
       "type": "colors",

@@ -11,6 +11,9 @@ if status is-login
     set -Ux PATH $HOME/.npm-global/bin $PATH
     set -Ux MANPAGER "nvim +Man!"
 
+    # Variable
+    set -gx PATH $HOME/.local/bin $PATH
+
 end
 
 ############################
