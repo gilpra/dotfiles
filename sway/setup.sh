@@ -80,7 +80,7 @@ fi
 
 # AUR packages
 log "Installing AUR packages..."
-yay_inst=("yay" "-S" "--needed")
+yay_inst=("yay" "-S" "--needed" "--noconfirm")
 yay_qry=("yay" "-Q")
 install_packages "$AUR_FILE" yay_inst yay_qry
 
@@ -124,6 +124,8 @@ fi
 
 # Create symlinks with stow
 log "Creating symlinks using stow..."
+mkdir -p "$HOME/.local/bin"
+rm -f "$HOME/.config/fish/config.fish"
 mkdir -p \
     "$HOME/.local/share/themes" \
     "$HOME/.local/share/icons" \
