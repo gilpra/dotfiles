@@ -1,9 +1,4 @@
 [[plugin.deps]]
-use = "KKV9/compress"
-rev = "46a6b9f"
-hash = "771af2becc575a3f43d0542de823969d"
-
-[[plugin.deps]]
 use = "uhs-robert/recycle-bin"
 rev = "fa68711"
 hash = "8714306b5cac6359edbacbf545fbd691"
@@ -22,6 +17,11 @@ hash = "3e023d31f29201efdac2a6ae35fedb78"
 use = "yazi-rs/plugins:smart-filter"
 rev = "ac82af3"
 hash = "c887903a63a2ff520081b6d90a4b3392"
+
+[[plugin.deps]]
+use = "ndtoan96/ouch"
+rev = "406ce6c"
+hash = "f5afc904d5106ee368c8aa2ded43bd74"
 
 [[flavor.deps]]
 use = "BennyOe/tokyo-night"

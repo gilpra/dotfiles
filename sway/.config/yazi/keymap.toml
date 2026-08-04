@@ -1,25 +1,21 @@
 [mgr]
 prepend_keymap = [
-  { on = [ "g", "p" ], run = "cd ~/Projects/Programming/", desc = "Go ~/Projects/Programming" },
+    { on = [ "g", "p" ], run = "cd ~/Projects/Programming/", desc = "Go ~/Projects/Programming" },
 
-  # --- Compress ---
-  { on = [ "c", "a", "a" ], run = "plugin compress",      desc = "Archive selected files" },
-  { on = [ "c", "a", "p" ], run = "plugin compress -p",   desc = "Archive selected files (password)" },
-  { on = [ "c", "a", "h" ], run = "plugin compress -ph",  desc = "Archive selected files (password+header)" },
-  { on = [ "c", "a", "l" ], run = "plugin compress -l",   desc = "Archive selected files (compression level)" },
-  { on = [ "c", "a", "u" ], run = "plugin compress -phl", desc = "Archive selected files (password+header+level)" },
+    # Compress
+    { on = [ "c", "a" ], run = "plugin ouch", desc = "Compress" },
 
-  # --- Trash / Restore ---
-  { on = "u",          run = "plugin restore",     desc = "Restore last deleted files" },
-  { on = [ "R" ], run = "plugin omni-trash",  desc = "Open Trash menu" },
-  { on = [ "g", "t" ], run = "cd ~/.local/share/Trash/files", desc = "Go to Trash folder" },
+    # Trash
+    { on = "u", run = "plugin recycle-bin restore", desc = "Restore deleted files" },
+    { on = "R", run = "plugin omni-trash", desc = "Open Trash menu" },
+    { on = [ "g", "t" ], run = "cd ~/.local/share/Trash/files", desc = "Go to Trash folder" },
 
-  # --- Mount ---
-  { on = [ "M" ], run = "plugin mount",  desc = "Open mount" },
+    # Mount
+    { on = "M", run = "plugin mount", desc = "Mount devices" },
 
-  # --- Terminal ---
-  { on = ["T"], run ='shell "foot" --orphan --confirm' , desc = "Open foot terminal here" },
+    # Terminal
+    { on = "T", run = 'shell "foot" --orphan --confirm', desc = "Open foot terminal" },
 
-  # --- Filter ---
-  { on   = "F", run  = "plugin smart-filter", desc = "Smart filter" },
+    # Filter
+    { on = "F", run = "plugin smart-filter", desc = "Smart filter" },
 ]
