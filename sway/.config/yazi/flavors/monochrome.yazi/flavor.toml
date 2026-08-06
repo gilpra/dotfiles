@@ -1,0 +1,239 @@
+# vim:fileencoding=utf-8:foldmethod=marker
+
+# ==========================================================
+# Monochrome Theme for Yazi
+# Palette
+#
+# Background : #181818
+# Surface    : #202020
+# Border     : #2E2E2E
+# Primary    : #E8E8E8
+# Bright     : #FFFFFF
+# Secondary  : #D8D8D8
+# Muted      : #B8B8B8
+# Dim        : #8A8A8A
+# Disabled   : #5A5A5A
+# ==========================================================
+
+# : Manager {{{
+
+[mgr]
+cwd = { fg = "#E8E8E8" }
+
+# Find
+find_keyword  = { fg = "#FFFFFF", bold = true, italic = true, underline = true }
+find_position = { fg = "#D8D8D8", bg = "reset", bold = true, italic = true }
+
+# Marker
+marker_copied   = { fg = "#181818", bg = "#A6E3A1" } # Hijau lembut
+marker_cut      = { fg = "#181818", bg = "#F2CDCD" } # Merah muda lembut
+marker_marked   = { fg = "#181818", bg = "#F9E2AF" } # Kuning lembut
+marker_selected = { fg = "#181818", bg = "#89DCEB" } # Biru lembut
+
+# Count
+count_copied   = { fg = "#181818", bg = "#E8E8E8" }
+count_cut      = { fg = "#181818", bg = "#B8B8B8" }
+count_selected = { fg = "#181818", bg = "#FFFFFF" }
+
+# Border
+border_symbol = "│"
+border_style  = { fg = "#2E2E2E" }
+
+# : }}}
+
+
+
+# : Tabs {{{
+
+[tabs]
+active   = { fg = "#181818", bg = "#E8E8E8", bold = true }
+inactive = { fg = "#B8B8B8", bg = "#202020" }
+
+# : }}}
+
+
+
+# : Mode {{{
+
+[mode]
+
+normal_main = { fg = "#181818", bg = "#E8E8E8", bold = true }
+normal_alt  = { fg = "#E8E8E8", bg = "#202020" }
+
+select_main = { fg = "#181818", bg = "#D8D8D8", bold = true }
+select_alt  = { fg = "#E8E8E8", bg = "#202020" }
+
+unset_main = { fg = "#181818", bg = "#B8B8B8", bold = true }
+unset_alt  = { fg = "#E8E8E8", bg = "#202020" }
+
+# : }}}
+
+
+
+# : Indicator {{{
+
+[indicator]
+parent  = { reversed = true }
+current = { reversed = true }
+preview = { underline = true }
+padding = { open = "█", close = "█" }
+
+# : }}}
+
+
+
+# : Status {{{
+
+[status]
+overall = { fg = "#E8E8E8" }
+
+sep_left  = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+
+progress_label  = { fg = "#181818", bold = true }
+progress_normal = { fg = "#E8E8E8", bg = "#202020" }
+progress_error  = { fg = "#B8B8B8", bg = "#202020" }
+
+perm_sep   = { fg = "#5A5A5A" }
+perm_type  = { fg = "#FFFFFF" }
+perm_read  = { fg = "#D8D8D8" }
+perm_write = { fg = "#B8B8B8" }
+perm_exec  = { fg = "#E8E8E8" }
+
+# : }}}
+
+
+
+# : Pick {{{
+
+[pick]
+border = { fg = "#E8E8E8" }
+active = { fg = "#FFFFFF", bold = true }
+inactive = {}
+
+# : }}}
+
+
+
+# : Input {{{
+
+[input]
+border   = { fg = "#E8E8E8" }
+title    = {}
+value    = {}
+selected = { reversed = true }
+
+# : }}}
+
+
+
+# : Completion {{{
+
+[cmp]
+border = { fg = "#E8E8E8" }
+
+# : }}}
+
+
+
+# : Tasks {{{
+
+[tasks]
+border  = { fg = "#E8E8E8" }
+title   = {}
+hovered = { fg = "#FFFFFF", underline = true }
+
+# : }}}
+
+
+
+# : Which {{{
+
+[which]
+mask            = { bg = "#202020" }
+cand            = { fg = "#FFFFFF" }
+rest            = { fg = "#B8B8B8" }
+desc            = { fg = "#D8D8D8" }
+separator       = "  "
+separator_style = { fg = "#5A5A5A" }
+
+# : }}}
+
+
+
+# : Help {{{
+
+[help]
+on      = { fg = "#FFFFFF" }
+run     = { fg = "#D8D8D8" }
+hovered = { reversed = true, bold = true }
+footer  = { fg = "#181818", bg = "#E8E8E8" }
+
+# : }}}
+
+
+
+# : Spot {{{
+
+[spot]
+border   = { fg = "#E8E8E8" }
+title    = { fg = "#E8E8E8" }
+tbl_col  = { fg = "#FFFFFF" }
+tbl_cell = { fg = "#D8D8D8", bg = "#202020" }
+
+# : }}}
+
+
+
+# : Notify {{{
+
+[notify]
+title_info  = { fg = "#E8E8E8" }
+title_warn  = { fg = "#D8D8D8" }
+title_error = { fg = "#B8B8B8" }
+
+# : }}}
+
+
+
+# : Filetype {{{
+
+[filetype]
+
+rules = [
+
+    # Images
+    { mime = "image/*", fg = "#D8D8D8" },
+
+    # Media
+    { mime = "video/*", fg = "#CFCFCF" },
+    { mime = "audio/*", fg = "#CFCFCF" },
+
+    # Archives
+    { mime = "application/zip",             fg = "#B8B8B8" },
+    { mime = "application/x-tar",           fg = "#B8B8B8" },
+    { mime = "application/x-bzip*",         fg = "#B8B8B8" },
+    { mime = "application/x-bzip2",         fg = "#B8B8B8" },
+    { mime = "application/x-7z-compressed", fg = "#B8B8B8" },
+    { mime = "application/x-rar",           fg = "#B8B8B8" },
+    { mime = "application/x-xz",            fg = "#B8B8B8" },
+
+    # Documents
+    { mime = "application/doc",      fg = "#E8E8E8" },
+    { mime = "application/epub+zip", fg = "#E8E8E8" },
+    { mime = "application/pdf",      fg = "#E8E8E8" },
+    { mime = "application/rtf",      fg = "#E8E8E8" },
+    { mime = "application/vnd.*",    fg = "#E8E8E8" },
+
+    # Executables
+    { mime = "application/*exec*", fg = "#FFFFFF" },
+
+    # Orphan
+    { mime = "*", is = "orphan", fg = "#B8B8B8", bg = "#2E2E2E" },
+
+    # Fallback
+    { url = "*",  fg = "#B8B8B8" },
+    { url = "*/", fg = "#E8E8E8" },
+]
+
+# : }}}
