@@ -5,7 +5,7 @@ if status is-login
     bash ~/.config/sway/gsetting.sh
 
     # Environment
-    set -Ux GTK_THEME Tokyonight-Night
+    set -Ux GTK_THEME Monochrome-Dark
     set -Ux PATH $HOME/.local/bin $PATH
     set -Ux PATH $HOME/.bun/bin $PATH
     set -Ux PATH $HOME/.npm-global/bin $PATH
