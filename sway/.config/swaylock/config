@@ -14,44 +14,44 @@ indicator-thickness=20
 indicator-x-position=700
 indicator-y-position=350
 
-# Warna tema utama (TokyoNight)
-inside-color=1a1b2688
-ring-color=7aa2f788
+# Warna tema utama (Soft Charcoal Monochrome)
+inside-color=181818CC
+ring-color=B8B8B8CC
 line-color=00000000
-text-color=c0caf5
+text-color=E8E8E8
 separator-color=00000000
 
-# Warna status: normal, salah, verifikasi, caps lock
-key-hl-color=7dcfff
-bs-hl-color=ff9e64
+# Highlight tombol
+key-hl-color=FFFFFF
+bs-hl-color=7A7A7A
 
 # Status: salah
-inside-wrong-color=1a1b2688
-line-wrong-color=f7768e
-ring-wrong-color=f7768eaa
-text-wrong-color=f7768e
+inside-wrong-color=181818CC
+line-wrong-color=FFFFFF
+ring-wrong-color=FFFFFFCC
+text-wrong-color=FFFFFF
 
 # Status: verifikasi
-inside-ver-color=1a1b2688
-line-ver-color=9ece6a
-ring-ver-color=9ece6aaa
-text-ver-color=c0caf5
+inside-ver-color=181818CC
+line-ver-color=B8B8B8
+ring-ver-color=B8B8B8CC
+text-ver-color=E8E8E8
 
 # Status: clear
-inside-clear-color=1a1b2688
-line-clear-color=ff9e64
-ring-clear-color=ff9e64aa
-text-clear-color=ff9e64
+inside-clear-color=181818CC
+line-clear-color=D0D0D0
+ring-clear-color=D0D0D0CC
+text-clear-color=D0D0D0
 
 # Status: caps lock
-inside-caps-lock-color=1a1b2688
-line-caps-lock-color=bb9af7
-ring-caps-lock-color=bb9af7aa
-text-caps-lock-color=bb9af7
-caps-lock-bs-hl-color=ff9e64
-caps-lock-key-hl-color=bb9af7
+inside-caps-lock-color=181818CC
+line-caps-lock-color=F0F0F0
+ring-caps-lock-color=F0F0F0CC
+text-caps-lock-color=F0F0F0
+caps-lock-bs-hl-color=7A7A7A
+caps-lock-key-hl-color=F0F0F0
 
 # Layout keyboard
-layout-bg-color=1a1b2688
+layout-bg-color=181818CC
 layout-border-color=00000000
-layout-text-color=c0caf5
+layout-text-color=E8E8E8
