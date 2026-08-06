@@ -21,43 +21,43 @@ font=0xProto Nerd Font 11
 # Format
 format=<b>%s</b>\n%b
 
-# TokyoNight Night — Default (normal urgency)
-background-color=#1a1b26
-text-color=#c0caf5
-border-color=#7aa2f7
-progress-color=over #292e42
+# Monochrome — Default
+background-color=#181818
+text-color=#e8e8e8
+border-color=#b8b8b8
+progress-color=over #2a2a2a
 
 # Urgency: Low
 [urgency=low]
-background-color=#1a1b26
-text-color=#565f89
-border-color=#292e42
+background-color=#181818
+text-color=#7a7a7a
+border-color=#3a3a3a
 default-timeout=4000
 
 # Urgency: Normal
 [urgency=normal]
-background-color=#1a1b26
-text-color=#c0caf5
-border-color=#7aa2f7
+background-color=#181818
+text-color=#e8e8e8
+border-color=#b8b8b8
 default-timeout=6000
 
 # Urgency: Critical
 [urgency=critical]
-background-color=#1a1b26
-text-color=#f7768e
-border-color=#f7768e
+background-color=#181818
+text-color=#ffffff
+border-color=#ffffff
 default-timeout=0
 
 # Grouped notifications
 [grouped]
 format=(%g) <b>%s</b>\n%b
-border-color=#bb9af7
+border-color=#d0d0d0
 
 # Hidden overflow indicator
 [hidden]
 format=(%h more)
-text-color=#565f89
-border-color=#292e42
+text-color=#7a7a7a
+border-color=#3a3a3a
 
 # Do Not Disturb mode
 [mode=do-not-disturb]
@@ -65,6 +65,7 @@ invisible=1
 
 # App-specific overrides
 [app-name=notify-send urgency=low]
-border-color=#9ece6a
+border-color=#5a5a5a
+
 [urgency=normal app-name=dunst]
-border-color=#e0af68
+border-color=#d0d0d0

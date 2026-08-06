@@ -1,8 +1,8 @@
 * {
-    background:      rgba(26, 27, 38, 1);
-    background-alt:  rgba(22, 22, 30, 1);
-    foreground:      rgba(192, 202, 245, 1);
-    selected:        rgba(255, 255, 255, 1);
-    active:          rgba(197, 59, 83, 1);
-    urgent:          rgba(255, 158, 100, 1);
+    background:      rgba(24, 24, 24, 1);    /* #181818 */
+    background-alt:  rgba(32, 32, 32, 1);    /* #202020 */
+    foreground:      rgba(232, 232, 232, 1); /* #E8E8E8 */
+    selected:        rgba(255, 255, 255, 1); /* #FFFFFF */
+    active:          rgba(184, 184, 184, 1); /* #B8B8B8 */
+    urgent:          rgba(122, 122, 122, 1); /* #7A7A7A */
 }
