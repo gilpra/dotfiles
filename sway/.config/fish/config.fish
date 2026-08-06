@@ -13,7 +13,6 @@ if status is-login
 
     # Variable
     set -gx PATH $HOME/.local/bin $PATH
-
 end
 
 ############################
@@ -112,7 +111,7 @@ alias grubup='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias fixpacman='sudo rm /var/lib/pacman/db.lck'
 alias hw='hwinfo --short'
 alias mirror='sudo reflector --country Indonesia --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
-alias ls='eza -al --color=always --group-directories-first --icons'
+alias ls='eza -al --color=always --group-directories-first --icons=always'
 
 # Journal
 alias jctl='journalctl -p 3 -xb'
