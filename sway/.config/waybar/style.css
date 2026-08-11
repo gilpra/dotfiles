@@ -12,7 +12,7 @@
 
 /* === Waybar Window === */
 window#waybar {
-  background: transparent;
+  background: #181818;
 }
 
 window > box {
