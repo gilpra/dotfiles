@@ -141,11 +141,11 @@ curl -fsSL https://raw.githubusercontent.com/garpra/dotbin/main/screenshot-wayla
 curl -fsSL https://raw.githubusercontent.com/garpra/dotbin/main/toggle-waybar -o ~/.local/bin/toggle-waybar && chmod +x ~/.local/bin/toggle-waybar
 
 # Clone Tokyonight-Night theme
-if [[ ! -d "$HOME/.local/share/themes/Tokyonight-Night" ]]; then
-    log "Cloning Tokyonight-Night theme..."
-    git clone https://github.com/garpra/tokyonight-gtk \
-        "$HOME/.local/share/themes/Tokyonight-Night"
-    ok "Tokyonight-Night Gtk theme installed"
+if [[ ! -d "$HOME/.local/share/themes/Monochrome-Dark" ]]; then
+    log "Cloning Monochrome-Dark theme..."
+    git clone https://github.com/garpra/monochrome-dark-gtk \
+        "$HOME/.local/share/themes/Monochrome-Dark"
+    ok "Monochrome-Dark Gtk theme installed"
 fi
 
 # Install Tela-circle icon theme
