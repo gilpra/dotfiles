@@ -43,8 +43,6 @@
     "group/control-panel": {
         "orientation": "horizontal",
         "modules": [
-            "custom/clipboard",
-            "custom/bluetooth",
             "custom/networkmanager"
         ]
     },
@@ -152,13 +150,6 @@
         ],
         "on-scroll-up": "brightnessctl s 1%+",
         "on-scroll-down": "brightnessctl s 1%-"
-    },
-    "custom/bluetooth": {
-        "exec": "sh ~/.local/bin/menus/bluetooth-manager --status | cat",
-        "format": " {}  ",
-        "interval": 5,
-        "on-click": "sh ~/.local/bin/menus/bluetooth-manager",
-        "tooltip": false
     },
     "custom/networkmanager": {
         "exec": "sh ~/.local/bin/menus/network-manager --status | cat",
