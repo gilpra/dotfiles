@@ -1,31 +1,36 @@
-#!/bin/bash
+#!/usr/bin/env bash
+PIDFILE="/tmp/battery-notify.pid"
 
-BAT_PATH="/sys/class/power_supply/BAT1"
+# Kill instance lama kalau masih hidup
+if [ -f "$PIDFILE" ] && kill -0 "$(cat "$PIDFILE")" 2>/dev/null; then
+    kill "$(cat "$PIDFILE")"
+fi
+echo $$ >"$PIDFILE"
+
+BAT_PATH=$(find /sys/class/power_supply -maxdepth 1 -name "BAT*" | head -n1)
 LOW=20
 CRITICAL=10
-
-[ -f "$BAT_PATH/capacity" ] || exit 0
-
+[ -n "$BAT_PATH" ] || exit 0
 STATE="normal"
-
 while true; do
-  BAT=$(cat "$BAT_PATH/capacity")
-  STATUS=$(cat "$BAT_PATH/status")
-
-  if [ "$STATUS" = "Discharging" ]; then
-
-    if [ "$BAT" -le "$CRITICAL" ] && [ "$STATE" != "critical" ]; then
-      notify-send -u critical "Battery Critical" "$BAT% remaining!"
-      STATE="critical"
-
-    elif [ "$BAT" -le "$LOW" ] && [ "$STATE" != "low" ] && [ "$STATE" != "critical" ]; then
-      notify-send "Battery Low" "$BAT% remaining"
-      STATE="low"
+    BAT=$(<"$BAT_PATH/capacity")
+    STATUS=$(<"$BAT_PATH/status")
+    if [ "$STATUS" = "Discharging" ]; then
+        if [ "$BAT" -le "$CRITICAL" ]; then
+            if [ "$STATE" != "critical" ]; then
+                notify-send -u critical -t 0 "Battery Critical" "$BAT% remaining!"
+                STATE="critical"
+            fi
+        elif [ "$BAT" -le "$LOW" ]; then
+            if [ "$STATE" = "normal" ]; then
+                notify-send -u normal -t 5000 "Battery Low" "$BAT% remaining"
+                STATE="low"
+            fi
+        else
+            STATE="normal"
+        fi
+    else
+        STATE="normal"
     fi
-
-  else
-    STATE="normal"
-  fi
-
-  sleep 60
+    sleep 60
 done
