@@ -1,68 +1,38 @@
 #!/bin/bash
 
-# VARIABLE
-ON_COLOR="#e8e8e8"
-OFF_COLOR="#8a8a8a"
-SERVICE_OFF_COLOR="#4a4a4a"
+if systemctl -q is-active bluetooth.service; then
 
-ICON_ON="󰂯"
-ICON_OFF="󰂲"
-
-# Fungsi untuk memberikan status ke waybar
-get_status() {
-    if ! systemctl -q is-active bluetooth.service; then
-        echo "<span color=\"$SERVICE_OFF_COLOR\">$ICON_OFF</span>"
-        return
-    fi
-
-    bt_powered=$(bluetoothctl show | grep -Po '(?<=Powered: )\w+' 2>/dev/null)
-    if [[ "$bt_powered" == "yes" ]]; then
-        echo "<span color=\"$ON_COLOR\">$ICON_ON</span>"
+    powered=$(bluetoothctl show | grep -Po '(?<=Powered: )\w+' 2>/dev/null)
+    if [[ "$powered" == "yes" ]]; then
+        toggle="Disable Bluetooth"
+        cmd="power off"
     else
-        echo "<span color=\"$OFF_COLOR\">$ICON_OFF</span>"
+        toggle="Enable Bluetooth"
+        cmd="power on"
     fi
-}
 
-main_menu() {
-    if systemctl -q is-active bluetooth.service; then
+    choice=$(printf "%s\n%s\n%s" \
+        "$toggle" "Manage Bluetooth" "Disable Service" |
+        rofi -dmenu -p "Bluetooth:" -theme ~/.config/rofi/menu.rasi)
 
-        powered=$(bluetoothctl show | grep -Po '(?<=Powered: )\w+' 2>/dev/null)
-        if [[ "$powered" == "yes" ]]; then
-            toggle="Disable Bluetooth"
-            cmd="power off"
-        else
-            toggle="Enable Bluetooth"
-            cmd="power on"
-        fi
+    case "$choice" in
+    "$toggle")
+        bluetoothctl <<<"$cmd"
+        notify-send "Bluetooth" "Bluetooth $(echo $cmd | awk '{print $2}')"
+        ;;
+    "Manage Bluetooth")
+        blueman-manager &
+        ;;
+    "Disable Service")
+        pkexec systemctl disable --now bluetooth.service
+        notify-send "Bluetooth" "Service disabled"
+        ;;
+    esac
 
-        choice=$(printf "%s\n%s\n%s" \
-            "$toggle" "Manage Bluetooth" "Disable Service" |
-            rofi -dmenu -p "Bluetooth:" -theme ~/.config/rofi/menu.rasi)
+else
+    choice=$(echo "Enable Service" |
+        rofi -dmenu -p "Bluetooth:" -theme ~/.config/rofi/menu.rasi)
 
-        case "$choice" in
-        "$toggle")
-            bluetoothctl <<<"$cmd"
-            notify-send "Bluetooth" "Bluetooth $(echo $cmd | awk '{print $2}')"
-            ;;
-        "Manage Bluetooth")
-            blueman-manager &
-            ;;
-        "Disable Service")
-            pkexec systemctl disable --now bluetooth.service
-            notify-send "Bluetooth" "Service disabled"
-            ;;
-        esac
-
-    else
-        choice=$(echo "Enable Service" |
-            rofi -dmenu -p "Bluetooth:" -theme ~/.config/rofi/menu.rasi)
-
-        [[ "$choice" ]] && pkexec systemctl start bluetooth.service &&
-            notify-send "Bluetooth" "Service enabled"
-    fi
-}
-
-case $1 in
---status) get_status ;;
-*) main_menu ;;
-esac
+    [[ "$choice" ]] && pkexec systemctl start bluetooth.service &&
+        notify-send "Bluetooth" "Service enabled"
+fi
