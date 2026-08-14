@@ -103,16 +103,16 @@ else
     warn "fish not found, skipping shell configuration"
 fi
 
-# Enable ly display manager
+Enable ly display manager
 if command -v ly-dm >/dev/null 2>&1; then
-    log "Enabling ly display manager..."
-    if sudo systemctl enable ly@tty2.service >/dev/null 2>&1; then
-        ok "ly enabled"
-    else
-        warn "Failed to enable ly"
-    fi
+   log "Enabling ly display manager..."
+   if sudo systemctl enable ly@tty2.service >/dev/null 2>&1; then
+       ok "ly enabled"
+   else
+       warn "Failed to enable ly"
+   fi
 else
-    warn "ly.service not found, display manager not enabled"
+   warn "ly.service not found, display manager not enabled"
 fi
 
 # Ensure stow is installed
@@ -127,6 +127,7 @@ log "Creating symlinks using stow..."
 mkdir -p "$HOME/.local/bin"
 rm -f "$HOME/.config/fish/config.fish"
 mkdir -p \
+    "$HOME/.local/share/fonts" \
     "$HOME/.local/share/themes" \
     "$HOME/.local/share/icons" \
     "$HOME/.local/share/bin"
@@ -139,6 +140,22 @@ curl -fsSL https://raw.githubusercontent.com/garpra/dotbin/main/screenshot-wayla
 
 # Clone script for toggle waybar
 curl -fsSL https://raw.githubusercontent.com/garpra/dotbin/main/toggle-waybar -o ~/.local/bin/toggle-waybar && chmod +x ~/.local/bin/toggle-waybar
+
+# Install 0xProto
+if [[ ! -d "$HOME/.local/share/fonts/0xProto" ]]; then
+    log "Downloading 0xProto Nerd Font..."
+    proto_url="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/0xProto.tar.xz"
+    proto_tmp="$(mktemp -d)"
+    trap 'rm -rf "$proto_tmp"' EXIT
+
+    curl -L --fail --output "$proto_tmp/proto.tar.xz" "$proto_url"
+    tar -xJf "$proto_tmp/proto.tar.xz" -C "$HOME/.local/share/icons"
+
+    trap - EXIT
+    rm -rf "$proto_tmp"
+    ok "0xProto Nerd Font installed"
+fi
+
 
 # Clone Tokyonight-Night theme
 if [[ ! -d "$HOME/.local/share/themes/Monochrome-Dark" ]]; then
