@@ -2,7 +2,6 @@ sway
 swaybg
 foot
 fish
-ttf-0xproto-nerd
 polkit-gnome
 eza
 xdg-desktop-portal
@@ -24,15 +23,17 @@ yt-dlp
 zoxide
 starship
 autotiling
+ttf-nerd-fonts-symbols-mono
 yazi
 hyprpicker
-libnotify
 waybar
 brightnessctl
 xorg-xwayland
 mako
+libnotify
 zip
 unzip
 unrar
 trash-cli
 udisks2
+ouch
