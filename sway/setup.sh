@@ -149,7 +149,8 @@ if [[ ! -d "$HOME/.local/share/fonts/0xProto" ]]; then
     trap 'rm -rf "$proto_tmp"' EXIT
 
     curl -L --fail --output "$proto_tmp/proto.tar.xz" "$proto_url"
-    tar -xJf "$proto_tmp/proto.tar.xz" -C "$HOME/.local/share/icons"
+    mkdir -p "$HOME/.local/share/fonts/0xProto"
+    tar -xJf "$proto_tmp/proto.tar.xz" -C "$HOME/.local/share/fonts/0xProto"
 
     trap - EXIT
     rm -rf "$proto_tmp"
