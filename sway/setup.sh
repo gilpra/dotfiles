@@ -61,7 +61,7 @@ pacman_inst=("sudo" "pacman" "-S" "--needed" "--noconfirm")
 pacman_qry=("pacman" "-Q")
 install_packages "$PKG_FILE" pacman_inst pacman_qry
 
-# Install yay if missing
+Install yay if missing
 if ! command -v yay >/dev/null 2>&1; then
     log "yay not found, installing..."
     sudo pacman -S --needed --noconfirm git base-devel
@@ -84,7 +84,7 @@ yay_inst=("yay" "-S" "--needed" "--noconfirm")
 yay_qry=("yay" "-Q")
 install_packages "$AUR_FILE" yay_inst yay_qry
 
-# Set fish as default shell
+Set fish as default shell
 if command -v fish >/dev/null 2>&1; then
     fish_path="$(command -v fish)"
     current_shell="$(basename "$SHELL")"
@@ -104,15 +104,22 @@ else
 fi
 
 # Enable ly display manager
-if command -v ly-dm >/dev/null 2>&1; then
-   log "Enabling ly display manager..."
-   if sudo systemctl enable ly@tty2.service >/dev/null 2>&1; then
-       ok "ly enabled"
-   else
-       warn "Failed to enable ly"
-   fi
+if systemctl cat ly@.service >/dev/null 2>&1; then
+    if systemctl is-enabled --quiet ly@tty2.service 2>/dev/null; then
+        ok "Ly display manager already enabled"
+    else
+        log "Enabling Ly display manager..."
+
+        sudo systemctl disable --now getty@tty2.service >/dev/null 2>&1
+
+        if sudo systemctl enable ly@tty2.service >/dev/null 2>&1; then
+            ok "Ly enabled on tty2"
+        else
+            warn "Failed to enable Ly"
+        fi
+    fi
 else
-   warn "ly.service not found, display manager not enabled"
+    warn "Ly systemd service not found, skipping"
 fi
 
 # Ensure stow is installed
@@ -136,10 +143,10 @@ cd "$DOTFILES_DIR"
 stow -R --target="$HOME" sway-dots
 
 # Clone script for screenshot in wayland
-curl -fsSL https://raw.githubusercontent.com/garpra/dotbin/main/screenshot-wayland -o ~/.local/bin/screenshot-wayland && chmod +x ~/.local/bin/screenshot-wayland
+curl -fsSL https://raw.githubusercontent.com/gilpra/dotbin/main/screenshot-wayland -o ~/.local/bin/screenshot-wayland && chmod +x ~/.local/bin/screenshot-wayland
 
 # Clone script for toggle waybar
-curl -fsSL https://raw.githubusercontent.com/garpra/dotbin/main/toggle-waybar -o ~/.local/bin/toggle-waybar && chmod +x ~/.local/bin/toggle-waybar
+curl -fsSL https://raw.githubusercontent.com/gilpra/dotbin/main/toggle-waybar -o ~/.local/bin/toggle-waybar && chmod +x ~/.local/bin/toggle-waybar
 
 # Install 0xProto
 if [[ ! -d "$HOME/.local/share/fonts/0xProto" ]]; then
@@ -157,11 +164,10 @@ if [[ ! -d "$HOME/.local/share/fonts/0xProto" ]]; then
     ok "0xProto Nerd Font installed"
 fi
 
-
-# Clone Tokyonight-Night theme
+# Clone Monochrome theme
 if [[ ! -d "$HOME/.local/share/themes/Monochrome-Dark" ]]; then
     log "Cloning Monochrome-Dark theme..."
-    git clone https://github.com/garpra/monochrome-dark-gtk \
+    git clone https://github.com/gilpra/monochrome-gtk \
         "$HOME/.local/share/themes/Monochrome-Dark"
     ok "Monochrome-Dark Gtk theme installed"
 fi
