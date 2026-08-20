@@ -61,7 +61,7 @@ pacman_inst=("sudo" "pacman" "-S" "--needed" "--noconfirm")
 pacman_qry=("pacman" "-Q")
 install_packages "$PKG_FILE" pacman_inst pacman_qry
 
-Install yay if missing
+# Install yay if missing
 if ! command -v yay >/dev/null 2>&1; then
     log "yay not found, installing..."
     sudo pacman -S --needed --noconfirm git base-devel
@@ -84,7 +84,7 @@ yay_inst=("yay" "-S" "--needed" "--noconfirm")
 yay_qry=("yay" "-Q")
 install_packages "$AUR_FILE" yay_inst yay_qry
 
-Set fish as default shell
+# Set fish as default shell
 if command -v fish >/dev/null 2>&1; then
     fish_path="$(command -v fish)"
     current_shell="$(basename "$SHELL")"
