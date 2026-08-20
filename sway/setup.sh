@@ -103,7 +103,7 @@ else
     warn "fish not found, skipping shell configuration"
 fi
 
-Enable ly display manager
+# Enable ly display manager
 if command -v ly-dm >/dev/null 2>&1; then
    log "Enabling ly display manager..."
    if sudo systemctl enable ly@tty2.service >/dev/null 2>&1; then
