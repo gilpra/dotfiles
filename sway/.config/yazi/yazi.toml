@@ -19,23 +19,23 @@ run = "ouch --show-file-icons"
 [opener]
 
 play = [
-    { run = 'mpv "$@"', orphan = true }
+    { run = 'mpv %s', orphan = true }
 ]
 
 edit = [
-    { run = 'nvim "$@"', block = true }
+    { run = 'nvim %s', block = true }
 ]
 
 book = [
-    { run = 'zathura "$@"', orphan = true }
+    { run = 'zathura %s', orphan = true }
 ]
 
 image = [
-    { run = 'imv-dir "$@"', orphan = true }
+    { run = 'imv-dir %s', orphan = true }
 ]
 
 extract = [
-    { run = 'ouch d -y "$@"', desc = "Extract here", for = "unix" }
+    { run = 'ouch d -y %s', desc = "Extract here", for = "unix" }
 ]
 
 [open]
