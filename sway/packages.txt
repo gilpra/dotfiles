@@ -37,3 +37,6 @@ unrar
 trash-cli
 udisks2
 ouch
+tesseract-data-eng
+zathura-pdf-mupdf
+zathura
