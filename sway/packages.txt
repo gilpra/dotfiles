@@ -1,7 +1,11 @@
 sway
 swaybg
 foot
-fish
+zsh
+zsh-completions
+zsh-autosuggestions
+zsh-syntax-highlighting
+zsh-history-substring-search
 polkit-gnome
 eza
 xdg-desktop-portal
