@@ -8,7 +8,7 @@
 - **Window Manager:** Sway
 - **Theme:** Tokyo Night
 - **Terminal:** Foot
-- **Shell:** Fish
+- **Shell:** Zsh
 
 ## Installation
 
