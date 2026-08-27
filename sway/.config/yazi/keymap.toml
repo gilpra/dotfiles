@@ -3,7 +3,7 @@ prepend_keymap = [
     { on = [ "g", "p" ], run = "cd ~/Projects/Programming/", desc = "Go ~/Projects/Programming" },
 
     # Compress
-    { on = [ "c", "a" ], run = "plugin ouch", desc = "Compress" },
+    { on = [ "C" ], run = "plugin ouch", desc = "Compress" },
 
     # Trash
     { on = "u", run = "plugin recycle-bin restore", desc = "Restore deleted files" },
