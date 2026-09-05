@@ -80,25 +80,6 @@ else
     warn "zsh not found, skipping shell configuration"
 fi
 
-# Enable ly display manager
-if systemctl cat ly@.service >/dev/null 2>&1; then
-    if systemctl is-enabled --quiet ly@tty2.service 2>/dev/null; then
-        ok "Ly display manager already enabled"
-    else
-        log "Enabling Ly display manager..."
-
-        sudo systemctl disable --now getty@tty2.service >/dev/null 2>&1
-
-        if sudo systemctl enable ly@tty2.service >/dev/null 2>&1; then
-            ok "Ly enabled on tty2"
-        else
-            warn "Failed to enable Ly"
-        fi
-    fi
-else
-    warn "Ly systemd service not found, skipping"
-fi
-
 # Ensure stow is installed
 if ! command -v stow >/dev/null 2>&1; then
     log "stow not found, installing..."
