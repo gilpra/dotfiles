@@ -2,11 +2,8 @@
 ignore-empty-password
 font=0xProto Nerd Font Propo
 font-size=40
-clock
 image=~/.wallpapers/bell_hydra.png
 indicator-idle-visible
-
-timestr=%H:%M
 
 # Posisi dan ukuran indikator
 indicator-radius=150
