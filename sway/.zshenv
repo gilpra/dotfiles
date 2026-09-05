@@ -3,7 +3,7 @@
 # ============================
 
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.npm-global/bin:$PATH"
+export PATH="$HOME/.bun/bin:$PATH"
 
 export MANPAGER='nvim +Man!'
 
