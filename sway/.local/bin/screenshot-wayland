@@ -10,6 +10,7 @@ FULLPATH=$DIR/$FILENAME
 
 if [[ ${XDG_SESSION_TYPE:-} != "wayland" ]]; then
   notify-send "Session must wayland"
+  exit 1
 fi
 
 if ! command -v grim >/dev/null; then

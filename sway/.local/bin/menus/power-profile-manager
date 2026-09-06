@@ -1,7 +1,7 @@
 #!/bin/bash
 
 profile=$(powerprofilesctl get)
-choice=$(printf "Performance\nBalanced\nPower Saver" | rofi -dmenu -p "Power Profile: (${profile^})" -theme "~/.config/rofi/menu.rasi")
+choice=$(printf "Performance\nBalanced\nPower Saver" | rofi -dmenu -p "Power Profile: (${profile^})" -theme ~/.config/rofi/menu.rasi)
 
 case "$choice" in
     "Performance")
