@@ -4,7 +4,7 @@ BAT_PATH=$(find /sys/class/power_supply -maxdepth 1 -name 'BAT*' -print -quit)
 LOW=20
 CRITICAL=10
 
-[ -n "$BAT_PATH" ] || exit 0
+[[ -n "$BAT_PATH" ]] || exit 0
 
 state=normal
 
@@ -12,22 +12,22 @@ while sleep 60; do
     battery=$(<"$BAT_PATH/capacity")
     status=$(<"$BAT_PATH/status")
 
-    if [ "$status" != "Discharging" ]; then
+    if [[ "$status" != "Discharging" ]]; then
         state=normal
         continue
     fi
 
-    if [ "$battery" -le "$CRITICAL" ] && [ "$state" != critical ]; then
+    if ((battery <= CRITICAL)) && [[ "$state" != "critical" ]]; then
         notify-send -u critical -t 0 \
             "Battery Critical" "$battery% remaining!"
         state=critical
 
-    elif [ "$battery" -le "$LOW" ] && [ "$state" = normal ]; then
+    elif ((battery <= LOW)) && [[ "$state" == "normal" ]]; then
         notify-send -u normal -t 5000 \
             "Battery Low" "$battery% remaining"
         state=low
 
-    elif [ "$battery" -gt "$LOW" ]; then
+    elif ((battery > LOW)); then
         state=normal
     fi
 done
