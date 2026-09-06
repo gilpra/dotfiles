@@ -178,6 +178,14 @@ alias ls='eza -al --color=always --group-directories-first --icons=always'
 # Functions
 # ============================
 
+yay() {
+    if [[ $# -eq 0 ]]; then
+        sudo pacman -Syu
+    else
+        sudo pacman "$@"
+    fi
+}
+
 cleanup() {
     local orphaned
 
