@@ -3,26 +3,21 @@
 @define-color wb-act-bg #B8B8B8;
 @define-color wb-act-fg #181818;
 
-/* === Global === */
 * {
   font-family: "0xProto Nerd Font", monospace;
   font-weight: bold;
   font-size: 11px;
 }
 
-/* === Waybar Window === */
 window#waybar {
   background: #070707;
   border-top: 0.5px solid #ffffff;
 }
 
 window > box {
-  /* background: @main-bg; */
-  /* margin: 3px 3px 0em 3px; */
   padding: 0 0.5em;
 }
 
-/* === Tooltip === */
 tooltip {
   background: @main-bg;
   color: @main-fg;
@@ -31,7 +26,6 @@ tooltip {
   font-size: 10px;
 }
 
-/* === Workspaces & Taskbar === */
 #workspaces {
   margin: 0.2em 0;
 }
@@ -51,12 +45,11 @@ tooltip {
   color: #ffffff;
 }
 
-/* === Modules === */
 #tray,
 #temperature,
 #memory,
 #clock,
-#battery,
+#custom-battery,
 #pulseaudio,
 #backlight,
 #idle_inhibitor,
@@ -68,14 +61,12 @@ tooltip {
   color: @main-fg;
 }
 
-/* === Tray === */
 #tray {
   background: #202020;
   margin: 0.2em 0.3em;
   padding: 0 0.4em;
 }
 
-/* === Custom Separators === */
 #custom-l_end {
   margin-left: 0.3em;
 }

@@ -1,5 +1,4 @@
 {
-    // General Settings
     "layer": "bottom",
     "position": "bottom",
     "mod": "dock",
@@ -7,7 +6,6 @@
     "passthrough": false,
     "gtk-layer-shell": true,
     "reload_style_on_change": true,
-    // Module Layouts
     "modules-left": [
         "custom/l_end",
         "idle_inhibitor",
@@ -25,7 +23,6 @@
         "group/control-panel",
         "custom/r_end"
     ],
-    // === Group: System Level ===
     "group/system-level": {
         "orientation": "horizontal",
         "modules": [
@@ -33,19 +30,17 @@
             "custom/pipe",
             "memory",
             "custom/pipe",
-            "battery",
+            "custom/battery",
             "pulseaudio",
             "backlight"
         ]
     },
-    // === Group: Control Panel ===
     "group/control-panel": {
         "orientation": "horizontal",
         "modules": [
             "custom/networkmanager"
         ]
     },
-    // === Left Modules ===
     "tray": {
         "icon-size": 18,
         "spacing": 5
@@ -64,7 +59,6 @@
             "default": "󰝣"
         }
     },
-    // === Center Modules ===
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -85,7 +79,6 @@
             }
         }
     },
-    // === Right Modules ===
     "temperature": {
         "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
         "critical-threshold": 85,
@@ -100,28 +93,12 @@
         "critical-threshold": 80,
         "warning-threshold": 60
     },
-    "battery": {
-        "states": {
-            "good": 80,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon} {capacity}%",
-        "format-charging": "󰂄 {capacity}%",
-        "format-plugged": "󰚥 {capacity}%",
-        "format-icons": [
-            "󰂎",
-            "󰁺",
-            "󰁻",
-            "󰁼",
-            "󰁽",
-            "󰁾",
-            "󰁿",
-            "󰂀",
-            "󰂁",
-            "󰂂",
-            "󰁹"
-        ]
+    "custom/battery": {
+        "exec": "~/.config/sway/scripts/battery-status.sh",
+        "return-type": "json",
+        "interval": 5,
+        "format": "{}",
+        "tooltip": true
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
@@ -151,13 +128,12 @@
         "on-scroll-down": "brightnessctl s 1%-"
     },
     "custom/networkmanager": {
-        "exec": "sh ~/.local/bin/menus/network-manager --status | cat",
+        "exec": "~/.local/bin/menus/network-manager --status",
         "format": "{} ",
         "interval": 5,
-        "on-click": "sh ~/.local/bin/menus/network-manager",
+        "on-click": "~/.local/bin/menus/network-manager",
         "tooltip": false
     },
-    // === Decorative Elements ===
     "custom/pipe": {
         "format": " | ",
         "tooltip": false
