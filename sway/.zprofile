@@ -1,7 +1,3 @@
-if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = "1" ]; then
-    sway
-fi
-
 # ============================
 # GTK Setting
 # ============================
@@ -15,3 +11,11 @@ gsettings set org.gnome.desktop.interface font-name '0xProto Nerd Font 11'
 gsettings set org.gnome.desktop.interface document-font-name '0xProto Nerd Font 12'
 gsettings set org.gnome.desktop.interface monospace-font-name '0xProto Nerd Font Mono 11'
 
+
+# ============================
+# Start Sway on TTY1
+# ============================
+
+if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = "1" ]; then
+    sway
+fi
