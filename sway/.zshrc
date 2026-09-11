@@ -119,6 +119,12 @@ if (( $+commands[starship] )); then
 fi
 
 # ============================
+# Ripgrep
+# ============================
+
+export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/rg.conf"
+
+# ============================
 # Greeting
 # ============================
 
