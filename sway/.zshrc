@@ -223,8 +223,3 @@ y() {
 
     rm -f -- "$tmp"
 }
-
-if [[ "$YAZI_SHELL" == 1 ]]; then
-    unset YAZI_SHELL
-    y
-fi
