@@ -1,6 +1,8 @@
 [mgr]
 prepend_keymap = [
-    { on = [ "g", "p" ], run = "cd ~/Projects/Programming/", desc = "Go ~/Projects/Programming" },
+    { on = [ "g", "p" ], run = "cd ~/Projects", desc = "Go ~/Projects" },
+    { on = [ "g", "l" ], run = "cd ~/.local", desc = "Go ~/.local" },
+    { on = [ "g", "." ], run = "cd ~/.dotfiles", desc = "Go ~/.dotfiles" },
 
     # Compress
     { on = [ "C" ], run = "plugin ouch", desc = "Compress" },
