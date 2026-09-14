@@ -2,6 +2,8 @@
 
 > Clean & minimal XFCE setup with Arch Linux.
 
+![XFCE Preview](https://raw.githubusercontent.com/gilpra/assets-repo/main/screenshots/xfce_1.png)
+
 ## Stack
 
 - **OS:** Arch Linux
