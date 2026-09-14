@@ -17,5 +17,5 @@ gsettings set org.gnome.desktop.interface monospace-font-name '0xProto Nerd Font
 # ============================
 
 if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = "1" ]; then
-    sway
+    exec sway
 fi
