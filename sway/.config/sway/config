@@ -1,3 +1,4 @@
+include /etc/sway/config.d/50-systemd-user.conf
 include ~/.config/sway/conf.d/variables.conf
 include ~/.config/sway/conf.d/autostart.conf
 include ~/.config/sway/conf.d/output.conf
