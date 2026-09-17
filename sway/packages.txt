@@ -1,6 +1,7 @@
 sway
 swaybg
 swaylock
+sway-contrib
 foot
 zsh
 zsh-completions
