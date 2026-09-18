@@ -62,23 +62,6 @@ pacman_inst=("sudo" "pacman" "-S" "--needed" "--noconfirm")
 pacman_qry=("pacman" "-Q")
 install_packages "$PKG_FILE" pacman_inst pacman_qry
 
-# Install yay if missing
-if ! command -v yay >/dev/null 2>&1; then
-    log "yay not found, installing..."
-    sudo pacman -S --needed --noconfirm git base-devel
-
-    tmpdir="$(mktemp -d)"
-    trap 'rm -rf "$tmpdir"' EXIT
-
-    git clone https://aur.archlinux.org/yay.git "$tmpdir/yay"
-    (cd "$tmpdir/yay" && makepkg -si --noconfirm)
-
-    trap - EXIT
-    rm -rf "$tmpdir"
-
-    ok "yay installed"
-fi
-
 # Set fish as default shell
 if command -v fish >/dev/null 2>&1; then
     fish_path="$(command -v fish)"
