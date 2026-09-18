@@ -91,7 +91,6 @@ fi
 # Create symlinks with stow
 log "Creating symlinks using stow..."
 mkdir -p "$HOME/.local/bin"
-rm -f "$HOME/.config/fish/config.fish"
 mkdir -p \
     "$HOME/.local/share/fonts" \
     "$HOME/.local/share/themes" \
@@ -103,12 +102,6 @@ stow -R \
     --dir="$ROOT_DIR" \
     --target="$HOME" \
     sway
-
-# Clone script for screenshot in wayland
-curl -fsSL https://raw.githubusercontent.com/gilpra/dotbin/main/screenshot-wayland -o ~/.local/bin/screenshot-wayland && chmod +x ~/.local/bin/screenshot-wayland
-
-# Clone script for toggle waybar
-curl -fsSL https://raw.githubusercontent.com/gilpra/dotbin/main/toggle-waybar -o ~/.local/bin/toggle-waybar && chmod +x ~/.local/bin/toggle-waybar
 
 # Install 0xProto
 if [[ ! -d "$HOME/.local/share/fonts/0xProto" ]]; then
