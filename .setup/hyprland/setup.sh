@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-DOTFILES_DIR="$HOME/.dotfiles"
-HYPR_DIR="$DOTFILES_DIR/dots-hypr"
-PKG_FILE="$HYPR_DIR/packages.txt"
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+ROOT_DIR="$(cd -- "$SCRIPT_DIR/../.." && pwd)"
+
+PROFILE_DIR="$ROOT_DIR/hyprland"
+PKG_FILE="$SCRIPT_DIR/packages.txt"
 
 log() { printf "[INFO] %s\n" "$1"; }
 warn() { printf "[WARN] %s\n" "$1"; }
@@ -17,12 +19,12 @@ if [[ "$EUID" -eq 0 ]]; then
     die "Do not run this script as root. Run as a regular user."
 fi
 
-if [[ ! -d "$DOTFILES_DIR" ]]; then
-    die "Dotfiles directory not found: $DOTFILES_DIR"
+if [[ ! -d "$ROOT_DIR" ]]; then
+    die "Dotfiles directory not found: $ROOT_DIR"
 fi
 
-if [[ ! -d "$HYPR_DIR" ]]; then
-    die "dots-hypr directory not found: $HYPR_DIR"
+if [[ ! -d "$PROFILE_DIR" ]]; then
+    die "dots-hypr directory not found: $PROFILE_DIR"
 fi
 
 install_packages() {
@@ -109,8 +111,11 @@ mkdir -p \
     "$HOME/.local/share/themes" \
     "$HOME/.local/share/icons"
 
-cd "$DOTFILES_DIR"
-stow -R --target="$HOME" sway-dots
+cd "$ROOT_DIR"
+stow -R \
+    --dir="$ROOT_DIR" \
+    --target="$HOME" \
+    hyprland
 
 # Clone Tokyonight-Dark theme
 if [[ ! -d "$HOME/.local/share/themes/Tokyonight-Dark" ]]; then

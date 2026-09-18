@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-DOTFILES_DIR="$HOME/.dotfiles"
-SWAY_DIR="$DOTFILES_DIR/sway-dots"
-PKG_FILE="$SWAY_DIR/packages.txt"
-AUR_FILE="$SWAY_DIR/aur-packages.txt"
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+ROOT_DIR="$(cd -- "$SCRIPT_DIR/../.." && pwd)"
+
+PROFILE_DIR="$ROOT_DIR/sway"
+PKG_FILE="$SCRIPT_DIR/packages.txt"
 
 log() { printf "[INFO] %s\n" "$1"; }
 warn() { printf "[WARN] %s\n" "$1"; }
@@ -18,12 +19,12 @@ if [[ "$EUID" -eq 0 ]]; then
     die "Do not run this script as root. Run as a regular user."
 fi
 
-if [[ ! -d "$DOTFILES_DIR" ]]; then
-    die "Dotfiles directory not found: $DOTFILES_DIR"
+if [[ ! -d "$ROOT_DIR" ]]; then
+    die "Dotfiles directory not found: $ROOT_DIR"
 fi
 
-if [[ ! -d "$SWAY_DIR" ]]; then
-    die "sway-dots directory not found: $SWAY_DIR"
+if [[ ! -d "$PROFILE_DIR" ]]; then
+    die "sway-dots directory not found: $PROFILE_DIR"
 fi
 
 install_packages() {
@@ -97,8 +98,11 @@ mkdir -p \
     "$HOME/.local/share/icons" \
     "$HOME/.local/share/bin"
 
-cd "$DOTFILES_DIR"
-stow -R --target="$HOME" sway-dots
+cd "$ROOT_DIR"
+stow -R \
+    --dir="$ROOT_DIR" \
+    --target="$HOME" \
+    sway
 
 # Clone script for screenshot in wayland
 curl -fsSL https://raw.githubusercontent.com/gilpra/dotbin/main/screenshot-wayland -o ~/.local/bin/screenshot-wayland && chmod +x ~/.local/bin/screenshot-wayland
