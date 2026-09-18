@@ -2,7 +2,7 @@
 ignore-empty-password
 font=0xProto Nerd Font Propo
 font-size=40
-image=~/.wallpapers/bell_hydra.png
+image=~/.local/share/wallpapers/bell_hydra_mono.png
 indicator-idle-visible
 
 # Posisi dan ukuran indikator
