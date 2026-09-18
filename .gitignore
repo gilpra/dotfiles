@@ -5,3 +5,6 @@
 *.swp
 .cache/
 .vscode/
+
+nvim/
+theme-vault/

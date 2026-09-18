@@ -9,7 +9,7 @@ Each profile directory contains the configuration files for a specific environme
 Clone the repository:
 
 ```bash
-git clone https://github.com/USERNAME/dotfiles.git ~/.dotfiles
+git clone https://github.com/gilpra/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 ```
 
