@@ -90,7 +90,7 @@
         "tooltip-format": "SWAP: {swapUsed}/{swapTotal}",
         "interval": 3,
         "max-length": 20,
-        "on-click": "foot -e htop",
+        "on-click": "foot --app-id=foot-float -e htop",
         "critical-threshold": 80,
         "warning-threshold": 60
     },
