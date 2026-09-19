@@ -4,7 +4,6 @@ ristretto
 thunar-archive-plugin
 thunar-media-tags-plugin
 xfce4-battery-plugin
-xfce4-datetime-plugin
 xfce4-mount-plugin
 xfce4-notifyd
 xfce4-pulseaudio-plugin
