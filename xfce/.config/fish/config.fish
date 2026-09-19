@@ -1,3 +1,5 @@
+fish_add_path ~/.local/bin
+
 # Menampilkan Fastfetch jika terminal adalah alacritty
 function fish_greeting
     if test "$TERM" = alacritty
@@ -17,11 +19,11 @@ alias ff=fastfetch
 alias fishconfig='micro ~/.config/fish/config.fish'
 
 # MPV
-alias music='~/.scripts/music.sh'
+alias music='music'
 
 # Paket manajemen
-alias paccek='yay -Q | grep '
-alias upgrade='yay -Syu && flatpak upgrade'
+alias paccek='pacman -Q | grep '
+alias upgrade='sudo pacman -Syu && flatpak upgrade'
 
 # Git
 alias gi='git init'
@@ -33,12 +35,6 @@ alias gc='git clone '
 alias gf='git fetch'
 alias grh='git reset --hard '
 alias grr='git remote remove '
-
-# Rekaman layar
-alias record='~/.scripts/record.sh'
-
-# Docker (Membersihkan semua container, images, volume, dan network)
-alias cleandock='docker container prune -f && docker volume prune -f && docker network prune -f'
 
 # Perintah sistem
 alias grubup="sudo grub-mkconfig -o /boot/grub/grub.cfg"
