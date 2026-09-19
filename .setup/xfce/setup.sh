@@ -24,7 +24,7 @@ if [[ ! -d "$ROOT_DIR" ]]; then
 fi
 
 if [[ ! -d "$PROFILE_DIR" ]]; then
-    die "sway-dots directory not found: $PROFILE_DIR"
+    die "xfce-dots directory not found: $PROFILE_DIR"
 fi
 
 install_packages() {
@@ -110,6 +110,10 @@ stow -R \
     --dir="$ROOT_DIR" \
     --target="$HOME" \
     xfce
+
+WALLPAPER="$HOME/.local/share/wallpapers/anime_skull.png"
+
+"$PROFILE_DIR/.config/xfce4/xfce4-set-wallpaper" "$WALLPAPER"
 
 # Clone Gruvbox-Dark theme
 if [[ ! -d "$HOME/.local/share/themes/Gruvbox-Dark" ]]; then
