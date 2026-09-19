@@ -122,7 +122,7 @@ fi
 # Clone Monochrome theme
 if [[ ! -d "$HOME/.local/share/themes/Monochrome-Dark" ]]; then
     log "Cloning Monochrome-Dark theme..."
-    git clone https://github.com/gilpra/monochrome-gtk \
+    git clone --depth 1 https://github.com/gilpra/monochrome-gtk \
         "$HOME/.local/share/themes/Monochrome-Dark"
     ok "Monochrome-Dark Gtk theme installed"
 fi
@@ -133,7 +133,7 @@ if [[ ! -d "$HOME/.local/share/icons/Tela-circle" ]]; then
     tela_tmp="$(mktemp -d)"
     trap 'rm -rf "$tela_tmp"' EXIT
 
-    git clone https://github.com/vinceliuice/Tela-circle-icon-theme "$tela_tmp/tela-circle"
+    git clone --depth 1 https://github.com/vinceliuice/Tela-circle-icon-theme "$tela_tmp/tela-circle"
     bash "$tela_tmp/tela-circle/install.sh"
 
     trap - EXIT

@@ -111,13 +111,13 @@ stow -R \
     --target="$HOME" \
     xfce
 
-# Clone Tokyonight-Dark theme
+# Clone Gruvbox-Dark theme
 if [[ ! -d "$HOME/.local/share/themes/Gruvbox-Dark" ]]; then
     log "Installing Gruvbox-dark icon theme..."
     gruvbox_tmp="$(mktemp -d)"
     trap 'rm -rf "$gruvbox_tmp"' EXIT
 
-    git clone https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme "$gruvbox_tmp/gruvbox-dark"
+    git clone --depth 1 https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme "$gruvbox_tmp/gruvbox-dark"
     bash "$gruvbox_tmp/gruvbox-dark/themes/install.sh" -d "$HOME/.local/share/themes" -c dark --tweaks macos
 
     trap - EXIT
@@ -131,7 +131,7 @@ if [[ ! -d "$HOME/.local/share/icons/Tela-circle" ]]; then
     tela_tmp="$(mktemp -d)"
     trap 'rm -rf "$tela_tmp"' EXIT
 
-    git clone https://github.com/vinceliuice/Tela-circle-icon-theme "$tela_tmp/tela-circle"
+    git clone --depth 1 https://github.com/vinceliuice/Tela-circle-icon-theme "$tela_tmp/tela-circle"
     bash "$tela_tmp/tela-circle/install.sh"
 
     trap - EXIT
