@@ -32,13 +32,11 @@
       <property name="&lt;Alt&gt;&lt;Super&gt;s" type="empty"/>
     </property>
     <property name="custom" type="empty">
-      <property name="&lt;Alt&gt;Print" type="string" value="xfce4-screenshooter -w"/>
-      <property name="&lt;Shift&gt;Print" type="string" value="xfce4-screenshooter -r"/>
       <property name="&lt;Super&gt;p" type="string" value="xfce4-display-settings --minimal"/>
       <property name="&lt;Super&gt;e" type="string" value="thunar"/>
       <property name="override" type="bool" value="true"/>
       <property name="Super_L" type="string" value="xfce4-popup-whiskermenu"/>
-      <property name="Print" type="string" value="/home/gilang/.config/xfce4/take_screenshoot.sh"/>
+      <property name="Print" type="string" value="take-screenshot"/>
       <property name="&lt;Super&gt;Return" type="string" value="exo-open --launch TerminalEmulator"/>
       <property name="&lt;Super&gt;f" type="string" value="firefox --ProfileManager"/>
     </property>
