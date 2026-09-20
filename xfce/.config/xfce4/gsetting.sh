@@ -31,3 +31,5 @@ gsettings set org.gnome.desktop.interface cursor-theme "$CURSOR_THEME" 2>/dev/nu
 gsettings set org.gnome.desktop.interface color-scheme prefer-dark 2>/dev/null || true
 
 apply_xfconf xfwm4 /general/theme string "$GTK_THEME"
+
+"$HOME/.config/xfce4/xfce4-set-wallpaper" "$HOME/.local/share/wallpapers/anime_skull.png"

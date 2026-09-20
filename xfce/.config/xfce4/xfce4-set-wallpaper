@@ -1,20 +1,19 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-set -euo pipefail
+wallpaper="$(realpath "$1")"
 
-WALLPAPER="$1"
+if [[ ! -f "$wallpaper" ]]; then
+    exit 1
+fi
 
-properties="$(
-    xfconf-query \
-        -c xfce4-desktop \
-        -p /backdrop \
-        -l |
-        grep -E 'screen.*/monitor.*/(image-path|last-image)$'
-)"
+xfconf-query \
+    -c xfce4-desktop \
+    -p /backdrop/screen0/monitor0/image-path \
+    -n -t string \
+    -s "$wallpaper"
 
-while IFS= read -r property; do
-    xfconf-query \
-        -c xfce4-desktop \
-        -p "$property" \
-        -s "$WALLPAPER"
-done <<<"$properties"
+xfconf-query \
+    -c xfce4-desktop \
+    -p /backdrop/screen0/monitorVirtual-1/workspace0/last-image \
+    -n -t string \
+    -s "$wallpaper"

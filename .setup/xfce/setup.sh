@@ -111,9 +111,9 @@ stow -R \
     --target="$HOME" \
     xfce
 
-WALLPAPER="$HOME/.local/share/wallpapers/anime_skull.png"
-
-"$PROFILE_DIR/.config/xfce4/xfce4-set-wallpaper" "$WALLPAPER"
+WALLPAPER="$HOME/.local/share/wallpapers"
+mkdir -p "$WALLPAPER"
+curl https://raw.githubusercontent.com/gilpra/assets-repo/main/wallpapers/anime_skull.png -o "$WALLPAPER/anime_skull.png" 
 
 # Clone Gruvbox-Dark theme
 if [[ ! -d "$HOME/.local/share/themes/Gruvbox-Dark" ]]; then
