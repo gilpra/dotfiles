@@ -16,7 +16,7 @@ prepend_keymap = [
     { on = "M", run = "plugin mount", desc = "Mount devices" },
 
     # Terminal
-    { on = "T", run = "shell --orphan -- foot", desc = "Open foot terminal" },
+    { on = "T", run = "shell --orphan -- foot --app-id=foot-float", desc = "Open foot terminal" },
 
     # Filter
     { on = "F", run = "plugin smart-filter", desc = "Smart filter" },
