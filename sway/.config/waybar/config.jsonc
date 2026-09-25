@@ -95,7 +95,7 @@
         "warning-threshold": 60
     },
     "custom/battery": {
-        "exec": "~/.config/sway/scripts/battery-status.sh",
+        "exec": "~/.config/sway/scripts/battery-status",
         "return-type": "json",
         "interval": 5,
         "format": "{}",
