@@ -7,10 +7,10 @@ ratio = [0, 7, 3]
 linemode = "size"
 
 [preview]
-image_filter = "lanczos3"
+max_width = 400
+max_height = 700
+image_filter = "triangle"
 image_quality = 75
-max_width = 800
-max_height = 1000
 
 [[plugin.prepend_previewers]]
 mime = "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}"
