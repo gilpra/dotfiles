@@ -8,3 +8,4 @@ include ~/.config/sway/conf.d/keybinds.conf
 include ~/.config/sway/conf.d/bar.conf
 
 exec_always systemctl --user start sway-session.target
+exec "$HOME/.config/sway/scripts/gsettings"
