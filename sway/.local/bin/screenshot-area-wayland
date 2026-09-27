@@ -17,7 +17,7 @@ if ! command -v grim >/dev/null; then
   exit
 fi
 
-if grim "$FULLPATH"; then
+if grim -g "$(slurp)" "$FULLPATH"; then
   notify-send -i "$FULLPATH" "Screenshot Successful" "Saved in $FULLPATH"
 else
   notify-send "Screenshots failed" "An error occurred while taking a screenshot"
