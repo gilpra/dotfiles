@@ -1,7 +1,0 @@
-#!/bin/bash
-
-# Load environment if exists
-[ -f "$HOME/.config/xfce4/env" ] && source "$HOME/.config/xfce4/env"
-
-# Apply XFCE settings (theme, icons, cursor, wallpaper)
-"$HOME/.config/xfce4/gsetting.sh" &

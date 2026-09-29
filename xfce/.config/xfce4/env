@@ -1,3 +1,0 @@
-export GTK_THEME=Gruvbox-Dark
-export XDG_SESSION_TYPE=x11
-
