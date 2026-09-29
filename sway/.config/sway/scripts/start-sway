@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
+set -Eeuo pipefail
 
 export XDG_CURRENT_DESKTOP=sway
 export XDG_SESSION_DESKTOP=sway
 export XDG_SESSION_TYPE=wayland
 
-exec systemd-cat -t sway -- /usr/bin/sway "$@"
+# When Sway is started directly from a TTY there is normally no user D-Bus
+# session yet. Reuse an existing session when one is already present.
+if [[ -z "${DBUS_SESSION_BUS_ADDRESS:-}" ]]; then
+    exec dbus-run-session -- /usr/bin/sway "$@"
+else
+    exec /usr/bin/sway "$@"
+fi

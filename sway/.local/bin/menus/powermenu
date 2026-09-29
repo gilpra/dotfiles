@@ -1,10 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -Eeuo pipefail
 
-choice=$(printf "󰍃\n\n\n" | rofi -dmenu -p "Powermenu:" -theme "~/.config/rofi/menu-block.rasi")
+choice=$(printf '󰍃\n\n\n' |
+    rofi -dmenu -p 'Powermenu:' -theme "$HOME/.config/rofi/menu-block.rasi")
 
 case "$choice" in
-  "󰍃") pkill -KILL -u "$USER" ;;
-  "") systemctl poweroff ;;
-  "") systemctl reboot ;;
-  "") swaylock -f ;;
+    '󰍃') loginctl terminate-user "$USER" ;;
+    '') loginctl poweroff ;;
+    '') loginctl reboot ;;
+    '') swaylock -f ;;
 esac

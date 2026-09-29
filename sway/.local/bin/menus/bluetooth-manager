@@ -1,38 +1,32 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -Eeuo pipefail
 
-if systemctl -q is-active bluetooth.service; then
+if ! bluetoothctl show >/dev/null 2>&1; then
+    notify-send 'Bluetooth' 'bluetoothd is unavailable'
+    exit 1
+fi
 
-    powered=$(bluetoothctl show | grep -Po '(?<=Powered: )\w+' 2>/dev/null)
-    if [[ "$powered" == "yes" ]]; then
-        toggle="Disable Bluetooth"
-        cmd="power off"
-    else
-        toggle="Enable Bluetooth"
-        cmd="power on"
-    fi
+powered="$(bluetoothctl show | awk '/Powered:/ {print $2; exit}')"
 
-    choice=$(printf "%s\n%s\n%s" \
-        "$toggle" "Manage Bluetooth" "Disable Service" |
-        rofi -dmenu -p "Bluetooth:" -theme ~/.config/rofi/menu.rasi)
+if [[ "$powered" == 'yes' ]]; then
+    toggle='Disable Bluetooth'
+    cmd='power off'
+else
+    toggle='Enable Bluetooth'
+    cmd='power on'
+fi
 
-    case "$choice" in
+choice=$(printf '%s\n%s\n' \
+    "$toggle" \
+    'Manage Bluetooth' |
+    rofi -dmenu -p 'Bluetooth:' -theme "$HOME/.config/rofi/menu.rasi")
+
+case "$choice" in
     "$toggle")
-        bluetoothctl <<<"$cmd"
-        notify-send "Bluetooth" "Bluetooth $(echo $cmd | awk '{print $2}')"
+        bluetoothctl <<<"$cmd" >/dev/null
+        notify-send 'Bluetooth' "Bluetooth $(awk '{print $2}' <<<"$cmd")"
         ;;
-    "Manage Bluetooth")
+    'Manage Bluetooth')
         blueman-manager &
         ;;
-    "Disable Service")
-        pkexec systemctl disable --now bluetooth.service
-        notify-send "Bluetooth" "Service disabled"
-        ;;
-    esac
-
-else
-    choice=$(echo "Enable Service" |
-        rofi -dmenu -p "Bluetooth:" -theme ~/.config/rofi/menu.rasi)
-
-    [[ "$choice" ]] && pkexec systemctl start bluetooth.service &&
-        notify-send "Bluetooth" "Service enabled"
-fi
+esac

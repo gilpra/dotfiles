@@ -144,8 +144,10 @@ alias vi='nvim .'
 alias lg='lazygit'
 alias tmx='tmux new-session -A -s main'
 
-alias start='sudo systemctl start'
-alias stop='sudo systemctl stop'
+alias start='sudo sv up'
+alias stop='sudo sv down'
+alias restart='sudo sv restart'
+alias sstatus='sudo sv status'
 
 alias ff='fastfetch'
 
@@ -178,34 +180,20 @@ alias gr='git rebase'
 # ============================
 
 alias grubup='sudo grub-mkconfig -o /boot/grub/grub.cfg'
-alias fixpacman='sudo rm /var/lib/pacman/db.lck'
-alias mirror='sudo reflector --country Indonesia --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
+alias update='sudo xbps-install -Suy'
+alias install='sudo xbps-install -y'
+alias remove='sudo xbps-remove'
+alias search='xbps-query -Rs'
+alias mirror='sudo xmirror'
 alias ls='eza -al --color=always --group-directories-first --icons=always'
 
 # ============================
 # Functions
 # ============================
 
-yay() {
-    if [[ $# -eq 0 ]]; then
-        sudo pacman -Syu
-    else
-        sudo pacman "$@"
-    fi
-}
-
 cleanup() {
-    local orphaned
-
-    orphaned=("${(@f)$(pacman -Qtdq 2>/dev/null)}")
-
-    if (( ${#orphaned[@]} > 0 )); then
-        sudo pacman -Rns -- "${orphaned[@]}"
-    else
-        echo "There are no packages to clean."
-    fi
+    sudo xbps-remove -o
 }
-
 y() {
     local tmp cwd
 

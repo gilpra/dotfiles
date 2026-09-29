@@ -9,4 +9,4 @@ export MANPAGER='nvim +Man!'
 
 export GTK_THEME='Monochrome-Dark'
 
-source ~/.config/zsh/path.zsh
+[[ -r ~/.config/zsh/path.zsh ]] && source ~/.config/zsh/path.zsh
