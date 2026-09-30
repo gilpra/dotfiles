@@ -103,7 +103,7 @@ stow -R \
 # Clone Tokyonight-Dark theme
 if [[ ! -d "$HOME/.local/share/themes/Tokyonight-Dark" ]]; then
     log "Cloning Tokyonight-Dark theme..."
-    git clone --depth 1 https://github.com/garpra/tokyodark-gtk \
+    git clone --depth 1 https://github.com/gilpra/tokyonight-gtk \
         "$HOME/.local/share/themes/Tokyonight-Dark"
     ok "Tokyonight-Dark theme installed"
 fi
