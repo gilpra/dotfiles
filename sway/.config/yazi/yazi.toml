@@ -8,7 +8,7 @@ linemode = "size"
 
 [preview]
 max_width = 400
-max_height = 700
+max_height = 650
 image_filter = "triangle"
 image_quality = 75
 
