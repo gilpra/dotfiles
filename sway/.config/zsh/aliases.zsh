@@ -9,6 +9,7 @@ alias v='nvim'
 alias vi='nvim .'
 alias lg='lazygit'
 alias tmx='tmux new-session -A -s main'
+alias t='tmux new-session -A -s'
 
 alias start='sudo systemctl start'
 alias stop='sudo systemctl stop'
