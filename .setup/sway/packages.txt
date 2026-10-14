@@ -46,6 +46,7 @@ yazi
 imv
 mpv
 yt-dlp
+xz
 zip
 unzip
 unrar
