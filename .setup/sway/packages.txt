@@ -1,4 +1,3 @@
-# Sway compositor and session integration
 sway
 sway-systemd
 swaybg
@@ -12,20 +11,13 @@ slurp
 grimpicker
 wl-clipboard
 cliphist
-
-# XDG integration (no desktop environment)
 xdg-desktop-portal
 xdg-desktop-portal-wlr
 xdg-desktop-portal-gtk
 xdg-user-dirs
-
-# Authentication agent
 polkit
 mate-polkit
-
-# Zsh and CLI tools
 zsh
-zsh-completions
 zsh-autosuggestions
 zsh-syntax-highlighting
 eza
@@ -33,8 +25,6 @@ fastfetch
 zoxide
 htop
 jq
-
-# Networking, Bluetooth and laptop controls
 NetworkManager
 NetworkManager-wifi
 bluez
@@ -42,8 +32,6 @@ blueman
 power-profiles-daemon
 brightnessctl
 udisks2
-
-# Audio (PipeWire with PulseAudio compatibility)
 pipewire
 pipewire-alsa
 pipewire-pulseaudio
@@ -51,8 +39,6 @@ wireplumber
 pulseaudio-utils
 pavucontrol
 libnotify
-
-# Media and file utilities
 imv
 mpv
 yt-dlp
@@ -65,8 +51,6 @@ tesseract
 tesseract-langpack-eng
 zathura
 zathura-pdf-mupdf
-
-# Dependencies for this setup script and user themes
 curl
 git
 tar
