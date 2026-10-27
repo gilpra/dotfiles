@@ -2,24 +2,18 @@
 # Functions
 # ============================
 
-yay() {
-    if [[ $# -eq 0 ]]; then
-        sudo pacman -Syu
+# Fedora package manager helper: pkg install <name>, pkg remove <name>, etc.
+pkg() {
+    if (( $# == 0 )); then
+        sudo dnf upgrade --refresh
     else
-        sudo pacman "$@"
+        sudo dnf "$@"
     fi
 }
 
+# Remove dependencies that are no longer needed.
 cleanup() {
-    local orphaned
-
-    orphaned=("${(@f)$(pacman -Qtdq 2>/dev/null)}")
-
-    if (( ${#orphaned[@]} > 0 )); then
-        sudo pacman -Rns -- "${orphaned[@]}"
-    else
-        echo "There are no packages to clean."
-    fi
+    sudo dnf autoremove
 }
 
 y() {

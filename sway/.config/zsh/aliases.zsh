@@ -44,7 +44,6 @@ alias gr='git rebase'
 # System
 # ============================
 
-alias grubup='sudo grub-mkconfig -o /boot/grub/grub.cfg'
-alias fixpacman='sudo rm /var/lib/pacman/db.lck'
-alias mirror='sudo reflector --country Indonesia --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
+alias dnfup='sudo dnf upgrade --refresh'
+alias dnflist='dnf list --installed'
 alias ls='eza -al --color=always --group-directories-first --icons=always'
