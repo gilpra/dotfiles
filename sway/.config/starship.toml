@@ -1,8 +1,8 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[  ](bg:#A9E0D8 fg:#181818)\
-[▌](bg:#202020 fg:#A9E0D8)\
+[  ](bg:#FFFFFF fg:#181818)\
+[▌](bg:#202020 fg:#FFFFFF)\
 $directory\
 [▌](fg:#202020 bg:#2E2E2E)\
 $git_branch\
@@ -26,7 +26,7 @@ style = "bg:#2E2E2E"
 format = '[[($all_status$ahead_behind )](fg:#EBD38F bg:#2E2E2E)]($style)'
 
 [character]
-success_symbol = "[❯](bold #8FD08F)"
+success_symbol = "[❯](bold #FFFFFF)"
 error_symbol = "[❯](bold #CF6666)"
-vimcmd_symbol = "[❮](bold #A9E0D8)"
+vimcmd_symbol = "[❮](bold #FFFFFF)"
 
